@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>assets/images/background.png</file>
+        <file>assets/images/icon.png</file>
+        <file>assets/images/static_1080.png</file>
+        <file>assets/images/test.png</file>
+        <file>assets/images/title.png</file>
+        <file>assets/images/enemies/ds_spider.gif</file>
+        <file>assets/music/OMORI - Cram It Wad.mp3</file>
+        <file>assets/music/omori_trees.mp3</file>
+    </qresource>
+</RCC>
