@@ -1,9 +1,11 @@
 #include "screen.h"
+#include <QCoreApplication>
 
-Screen::Screen(QWidget *parent): QWidget(parent){
+Screen::Screen(QWidget *parent, QStackedWidget *stacked): QWidget(parent){
     setStyleSheet("background-color: transparent");
     setAspectRatio(QSizeF(16, 9));
 
+    stackwidget = stacked;
     parent->setMinimumSize(800, 450);
     parent->setStyleSheet("background-color: black");
     root.setParent(this);
@@ -13,13 +15,41 @@ Screen::Screen(QWidget *parent): QWidget(parent){
 
 QSize Screen::sizeHint() const
 {
-    return QSize(m_aspectRatio.width() * this->size().width(), m_aspectRatio.height() * this->size().width());
+    return QSize(aspectRatio.width() * this->size().width(), aspectRatio.height() * this->size().width());
 }
 
 void Screen::setAspectRatio(const QSizeF &aspectRatio)
 {
-    m_aspectRatio = aspectRatio;
+    this->aspectRatio = aspectRatio;
     updateGeometry();
+}
+
+void Screen::updateScale(QResizeEvent *event){
+    int width = event->size().width();
+    int height = event->size().height();
+
+    int max_width = (int)(height * aspectRatio.width() / aspectRatio.height());
+    int max_height = (int)(width * aspectRatio.height() / aspectRatio.width());
+
+    int label_width = qMin(width, max_width);
+    int label_height = qMin(height, max_height);
+    int x = (width - label_width) / 2;
+    int y = (height - label_height) / 2;
+    root.setFixedSize(label_width, label_height);
+    parentWidget()->parentWidget()->setGeometry(x, y, label_width, label_height);
+}
+
+void Screen::setBackGroundImage(QString string)
+{
+    root.setPixmap(QPixmap(string));
+}
+
+void Screen::sizeInit()
+{
+    QSize newSize(parentWidget()->parentWidget()->parentWidget()->size().width(), parentWidget()->parentWidget()->parentWidget()->size().height());
+
+    QResizeEvent *resizeEvent = new QResizeEvent(newSize, newSize);
+    resizeScreen(resizeEvent);
 }
 
 Screen::~Screen()

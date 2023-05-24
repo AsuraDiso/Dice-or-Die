@@ -22,6 +22,9 @@ public:
 protected:
     void resizeEvent(QResizeEvent *event) override;
 
+private slots:
+    void on_stackedWidget_currentChanged(int arg1);
+
 private:
     Ui::Window *ui;
 };

@@ -9,18 +9,51 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    data/components/mapgenerator.cpp \
+    data/components/musicmanager.cpp \
+    data/screens/bossfightscreen.cpp \
+    data/screens/creditsscreen.cpp \
+    data/screens/fightscreen.cpp \
+    data/screens/gamescreen.cpp \
+    data/screens/mapscreen.cpp \
+    data/screens/settingsscreen.cpp \
+    data/screens/tutorialscreen.cpp \
+    data/widgets/button.cpp \
+    data/widgets/scrollarea.cpp \
+    data/widgets/textimage.cpp \
     main.cpp \
     data/screens/mainmenuscreen.cpp \
     data/screens/screen.cpp \
     data/screens/window.cpp
 
+
 HEADERS += \
+    data/components/mapgenerator.h \
+    data/components/musicmanager.h \
+    data/screens/bossfightscreen.h \
+    data/screens/creditsscreen.h \
+    data/screens/fightscreen.h \
+    data/screens/gamescreen.h \
     data/screens/mainmenuscreen.h \
+    data/screens/mapscreen.h \
     data/screens/screen.h \
-    data/screens/window.h
+    data/screens/settingsscreen.h \
+    data/screens/tutorialscreen.h \
+    data/screens/window.h \
+    data/widgets/button.h \
+    data/widgets/scrollarea.h \
+    data/widgets/textimage.h
+
 
 FORMS += \
+    data/screens/bossfightscreen.ui \
+    data/screens/creditsscreen.ui \
+    data/screens/fightscreen.ui \
+    data/screens/gamescreen.ui \
     data/screens/mainmenuscreen.ui \
+    data/screens/mapscreen.ui \
+    data/screens/settingsscreen.ui \
+    data/screens/tutorialscreen.ui \
     data/screens/window.ui
 
 # Default rules for deployment.
