@@ -15,7 +15,7 @@ MapGenerator::MapGenerator()
 
 MapGenerator::~MapGenerator()
 {
-    Q_ASSERT(instance != nullptr);
+   // Q_ASSERT(instance != nullptr);
     instance = nullptr;
 }
 

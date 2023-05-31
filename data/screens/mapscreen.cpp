@@ -1,17 +1,24 @@
 #include "mapscreen.h"
 #include "ui_mapscreen.h"
-#include "../components/mapgenerator.h"
+#include "../components/gamemanager.h"
 
-MapScreen::MapScreen(QWidget *parent) :
-    QWidget(parent),
+MapScreen::MapScreen(QWidget *parent, QStackedWidget *stackwidg) :
+    Screen(parent, stackwidg),
     ui(new Ui::MapScreen)
 {
     ui->setupUi(this);
-    MapGenerator::generateRandomMaze();
+
+
+}
+
+void MapScreen::resizeScreen(QResizeEvent *event)
+{
+    QWidget::resizeEvent(event);
+    Screen::updateScale(event);
     int val = 0;
-    for (int i = 0; i < MapGenerator::getSize().width(); i++){
-        for (int j = 0; j < MapGenerator::getSize().height(); j++){
-            val = MapGenerator::getValueInPoint(i, j);
+    for (int i = 0; i < GameManager::getMap().getSize().width(); i++){
+        for (int j = 0; j <  GameManager::getMap().getSize().height(); j++){
+            val =  GameManager::getMap().getValueInPoint(i, j);
             if (val != 0){
                 QLabel* label = new QLabel(this);
                 label->setText(QString::number(val));

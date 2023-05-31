@@ -8,6 +8,7 @@
 #include <QVBoxLayout>
 #include <QPushButton>
 #include "../components/musicmanager.h"
+#include "../components/gamemanager.h"
 
 MainMenuScreen::MainMenuScreen(QWidget *parent, QStackedWidget *stackwidg) :
     Screen(parent, stackwidg),
@@ -38,22 +39,23 @@ void MainMenuScreen::on_exit_clicked()
 
 void MainMenuScreen::on_start_clicked()
 {
-    stackwidget->setCurrentIndex(1);
+    GameManager::generateNewLevel();
+    stackwidget->setCurrentIndex(4);
 }
 
 void MainMenuScreen::on_tutorial_clicked()
 {
-    stackwidget->setCurrentIndex(2);
+    stackwidget->setCurrentIndex(1);
 }
 
 void MainMenuScreen::on_options_clicked()
 {
-    stackwidget->setCurrentIndex(3);
+    stackwidget->setCurrentIndex(2);
 }
 
 void MainMenuScreen::on_credits_clicked()
 {
-    stackwidget->setCurrentIndex(4);
+    stackwidget->setCurrentIndex(3);
 }
 
 MainMenuScreen::~MainMenuScreen()

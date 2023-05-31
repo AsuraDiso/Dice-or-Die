@@ -9,6 +9,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    data/components/gamemanager.cpp \
     data/components/mapgenerator.cpp \
     data/components/musicmanager.cpp \
     data/screens/bossfightscreen.cpp \
@@ -28,6 +29,7 @@ SOURCES += \
 
 
 HEADERS += \
+    data/components/gamemanager.h \
     data/components/mapgenerator.h \
     data/components/musicmanager.h \
     data/screens/bossfightscreen.h \

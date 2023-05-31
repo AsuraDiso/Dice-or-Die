@@ -33,7 +33,7 @@
      <height>91</height>
     </rect>
    </property>
-   <widget class="QLabel" name="nextlevel_xp_label">
+   <widget class="TextImage" name="nextlevel_xp_label">
     <property name="geometry">
      <rect>
       <x>590</x>
@@ -46,7 +46,7 @@
      <string>XP:</string>
     </property>
    </widget>
-   <widget class="QLabel" name="playericon">
+   <widget class="TextImage" name="playericon">
     <property name="geometry">
      <rect>
       <x>60</x>
@@ -95,7 +95,7 @@
      <height>91</height>
     </rect>
    </property>
-   <widget class="QLabel" name="coins">
+   <widget class="TextImage" name="coins">
     <property name="geometry">
      <rect>
       <x>690</x>
@@ -108,7 +108,7 @@
      <string>x999</string>
     </property>
    </widget>
-   <widget class="QLabel" name="level_depth">
+   <widget class="TextImage" name="level_depth">
     <property name="geometry">
      <rect>
       <x>370</x>
@@ -121,7 +121,7 @@
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="levelname">
+   <widget class="TextImage" name="levelname">
     <property name="geometry">
      <rect>
       <x>370</x>
@@ -136,6 +136,13 @@
    </widget>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>TextImage</class>
+   <extends>QLabel</extends>
+   <header>data/widgets/textimage.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
