@@ -7,14 +7,24 @@ MapScreen::MapScreen(QWidget *parent, QStackedWidget *stackwidg) :
     ui(new Ui::MapScreen)
 {
     ui->setupUi(this);
-
-
 }
 
 void MapScreen::resizeScreen(QResizeEvent *event)
 {
     QWidget::resizeEvent(event);
     Screen::updateScale(event);
+    ui->coins->resize(root.width(), root.height());
+    ui->levelname->resize(root.width(), root.height());
+    ui->level_depth->resize(root.width(), root.height());
+    ui->widget->resize(root.width(), root.height());
+    ui->widget_2->resize(root.width(), root.height());
+}
+
+void MapScreen::sizeInit(){
+    Screen::sizeInit();
+    setBackGroundImage(":/assets/images/map.png");
+    ui->levelname->setText(GameManager::getLevelName()+": "+GameManager::getLevelDepth());
+    ui->coins->setText(QString::number(GameManager::getCoins()));
     int val = 0;
     for (int i = 0; i < GameManager::getMap().getSize().width(); i++){
         for (int j = 0; j <  GameManager::getMap().getSize().height(); j++){
@@ -38,7 +48,6 @@ void MapScreen::resizeScreen(QResizeEvent *event)
         }
     }
 }
-
 MapScreen::~MapScreen()
 {
     delete ui;

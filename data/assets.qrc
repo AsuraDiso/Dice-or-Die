@@ -8,5 +8,7 @@
         <file>assets/images/enemies/ds_spider.gif</file>
         <file>assets/music/OMORI - Cram It Wad.mp3</file>
         <file>assets/music/omori_trees.mp3</file>
+        <file>assets/images/map.png</file>
+        <file>assets/images/title.sai2</file>
     </qresource>
 </RCC>

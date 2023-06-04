@@ -20,7 +20,7 @@ public:
     explicit Screen(QWidget *parent = nullptr, QStackedWidget *stacked = nullptr);
     virtual void resizeScreen(QResizeEvent *event) = 0;
     QSize sizeHint() const;
-    void sizeInit();
+    virtual void sizeInit();
     void updateScale(QResizeEvent *event);
     void setAspectRatio(const QSizeF &aspectRatio);
     void setBackGroundImage(QString string);

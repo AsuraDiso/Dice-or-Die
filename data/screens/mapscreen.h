@@ -15,6 +15,7 @@ class MapScreen : public Screen
 public:
     explicit MapScreen(QWidget *parent = nullptr, QStackedWidget *stacked = nullptr);
     void resizeScreen(QResizeEvent *event) override;
+    void sizeInit();
     ~MapScreen();
 
 private:

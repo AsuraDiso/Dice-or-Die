@@ -22,6 +22,7 @@ SOURCES += \
     data/widgets/button.cpp \
     data/widgets/scrollarea.cpp \
     data/widgets/textimage.cpp \
+    data/widgets/widget.cpp \
     main.cpp \
     data/screens/mainmenuscreen.cpp \
     data/screens/screen.cpp \
@@ -44,7 +45,8 @@ HEADERS += \
     data/screens/window.h \
     data/widgets/button.h \
     data/widgets/scrollarea.h \
-    data/widgets/textimage.h
+    data/widgets/textimage.h \
+    data/widgets/widget.h
 
 
 FORMS += \

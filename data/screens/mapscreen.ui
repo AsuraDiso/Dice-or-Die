@@ -24,7 +24,7 @@
    </property>
    <layout class="QGridLayout" name="map"/>
   </widget>
-  <widget class="QWidget" name="widget" native="true">
+  <widget class="Widget" name="widget" native="true">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -32,6 +32,9 @@
      <width>801</width>
      <height>91</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(0,0,0,0.5)</string>
    </property>
    <widget class="TextImage" name="nextlevel_xp_label">
     <property name="geometry">
@@ -86,7 +89,7 @@
     </property>
    </widget>
   </widget>
-  <widget class="QWidget" name="widget_2" native="true">
+  <widget class="Widget" name="widget_2" native="true">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -94,6 +97,9 @@
      <width>801</width>
      <height>91</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(0,0,0,0.5)</string>
    </property>
    <widget class="TextImage" name="coins">
     <property name="geometry">
@@ -141,6 +147,12 @@
    <class>TextImage</class>
    <extends>QLabel</extends>
    <header>data/widgets/textimage.h</header>
+  </customwidget>
+  <customwidget>
+   <class>Widget</class>
+   <extends>QWidget</extends>
+   <header>data/widgets/widget.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources/>
