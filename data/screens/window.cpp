@@ -8,7 +8,6 @@
 #include "mapscreen.h"
 #include "creditsscreen.h"
 #include "settingsscreen.h"
-#include "gamescreen.h"
 #include "tutorialscreen.h"
 #include <QResizeEvent>
 #include <QDebug>
@@ -20,8 +19,7 @@ Window::Window(QWidget *parent)
 {
     ui->setupUi(this);
     MainMenuScreen* mainscreen = new MainMenuScreen(this, ui->stackedWidget);
-    GameScreen* gamescreen = new GameScreen(this, ui->stackedWidget);
-    MapScreen* mapscreen = new MapScreen(this);//, ui->stackedWidget
+    MapScreen* mapscreen = new MapScreen(this, ui->stackedWidget);
     FightScreen* fightscreen = new FightScreen(this);//, ui->stackedWidget
     BossFightScreen* bossfightscreen = new BossFightScreen(this);//, ui->stackedWidget
     TutorialScreen* tutorialscreen = new TutorialScreen(this, ui->stackedWidget);
@@ -34,7 +32,7 @@ Window::Window(QWidget *parent)
     ui->stackedWidget->addWidget(mapscreen);
     ui->stackedWidget->addWidget(fightscreen);
     ui->stackedWidget->addWidget(bossfightscreen);
-    ui->stackedWidget->setCurrentWidget(fightscreen); //mainscreen
+    ui->stackedWidget->setCurrentWidget(mainscreen); //mainscreen
 }
 
 void Window::resizeEvent(QResizeEvent *event)

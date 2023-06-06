@@ -18,6 +18,9 @@ public:
     void sizeInit();
     ~MapScreen();
 
+private slots:
+    void on_backbtn_clicked();
+
 private:
     Ui::MapScreen *ui;
 };

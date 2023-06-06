@@ -3,8 +3,7 @@
 
 TextImage::TextImage(QWidget *parent): QLabel(parent)//, moveable(false)
 {
-    moveable = true;
-   //
+    moveable = false;
 }
 
 void TextImage::resize(double width, double height){

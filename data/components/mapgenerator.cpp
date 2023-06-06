@@ -38,6 +38,19 @@ void MapGenerator::generateRandomMaze()
     generateMaze(s, s, a, p0, p1);
 }
 
+void MapGenerator::generateRandomMaze(int r)
+{
+    srand(static_cast<unsigned>(QTime::currentTime().msecsSinceStartOfDay()));
+
+    int s = r;
+    coords p0, p1;
+    p0.x = s / 2;
+    p0.y = 0;
+    p1.x = s / 2;
+    p1.y = s - 1;
+    int a = s*s/10;
+    generateMaze(s, s, a, p0, p1);
+}
 int MapGenerator::getValueInPoint(int r, int c)
 {
     return maze[r][c];

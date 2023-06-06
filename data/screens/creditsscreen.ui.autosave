@@ -16,20 +16,26 @@
   <widget class="ScrollArea" name="scrollArea">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>-4</y>
-     <width>600</width>
+     <x>120</x>
+     <y>-10</y>
+     <width>581</width>
      <height>461</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: rgba(0,0,0,0.5)</string>
    </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
    <property name="verticalScrollBarPolicy">
     <enum>Qt::ScrollBarAlwaysOff</enum>
    </property>
    <property name="horizontalScrollBarPolicy">
     <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="sizeAdjustPolicy">
+    <enum>QAbstractScrollArea::AdjustIgnored</enum>
    </property>
    <property name="widgetResizable">
     <bool>false</bool>
@@ -39,7 +45,7 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>600</width>
+      <width>584</width>
       <height>2108</height>
      </rect>
     </property>

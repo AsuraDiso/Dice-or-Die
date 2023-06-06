@@ -16,8 +16,10 @@ void MapScreen::resizeScreen(QResizeEvent *event)
     ui->coins->resize(root.width(), root.height());
     ui->levelname->resize(root.width(), root.height());
     ui->level_depth->resize(root.width(), root.height());
-    ui->widget->resize(root.width(), root.height());
-    ui->widget_2->resize(root.width(), root.height());
+    ui->gridWidget->resize(root.width(), root.height());
+    ui->backbtn->resize(root.width(), root.height());
+    ui->health_val->resize(root.width(), root.height());
+    ui->nextlevel_xp->resize(root.width(), root.height());
 }
 
 void MapScreen::sizeInit(){
@@ -25,14 +27,26 @@ void MapScreen::sizeInit(){
     setBackGroundImage(":/assets/images/map.png");
     ui->levelname->setText(GameManager::getLevelName()+": "+GameManager::getLevelDepth());
     ui->coins->setText(QString::number(GameManager::getCoins()));
+
+    for (int i = ui->gridWidget->layout()->count() - 1; i >= 0; --i) {
+        QWidget* widget = ui->gridWidget->layout()->itemAt(i)->widget();
+        ui->gridWidget->layout()->removeWidget(widget);
+        widget->deleteLater();
+    }
     int val = 0;
+    if (GameManager::getLevelDepth().toInt() >= GameManager::getBossLevel()){
+        on_backbtn_clicked();
+        return;
+    }
     for (int i = 0; i < GameManager::getMap().getSize().width(); i++){
         for (int j = 0; j <  GameManager::getMap().getSize().height(); j++){
             val =  GameManager::getMap().getValueInPoint(i, j);
             if (val != 0){
-                QLabel* label = new QLabel(this);
-                label->setText(QString::number(val));
-                if (val == 2 or val == 3){
+                QPushButton* label = new QPushButton(this);
+
+                label->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+
+                if (val == 2 || val == 3){
                     label->setStyleSheet("background-color: green");
                 } else if (val == 4) {
                     label->setStyleSheet("background-color: red");
@@ -43,6 +57,13 @@ void MapScreen::sizeInit(){
                 } else {
                     label->setStyleSheet("background-color: black");
                 }
+                connect(label, &QPushButton::clicked, [=](){
+                    GameManager::playerMoved(val, stackwidget);
+                    if (val == 3){
+                        sizeInit();
+                    }
+                    label->setStyleSheet("background-color: purple");
+                });
                 ui->map->addWidget(label, i, j);
             }
         }
@@ -52,3 +73,9 @@ MapScreen::~MapScreen()
 {
     delete ui;
 }
+
+void MapScreen::on_backbtn_clicked()
+{
+    stackwidget->setCurrentIndex(0);
+}
+

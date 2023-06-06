@@ -7,6 +7,7 @@
 #include <QStackedWidget>
 #include <QResizeEvent>
 #include <QShowEvent>
+#include <QTimer>
 
 namespace Ui {
 class Screen;
@@ -29,6 +30,7 @@ public:
 protected:
     QStackedWidget *stackwidget;
     QLabel root;
+    QTimer *timer;
     QSizeF aspectRatio{9, 16};
 };
 

@@ -14,6 +14,7 @@ public:
     static void generateMaze(int r, int c, int a, coords P0, coords Pf);
     static int getValueInPoint(int r, int c);
     static void generateRandomMaze();
+    static void generateRandomMaze(int r);
     static QSize getSize();
 
 private:

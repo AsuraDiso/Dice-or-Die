@@ -9,9 +9,14 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    data/actioncards/actioncard.cpp \
+    data/chars/character.cpp \
+    data/chars/knight.cpp \
     data/components/gamemanager.cpp \
     data/components/mapgenerator.cpp \
     data/components/musicmanager.cpp \
+    data/enemies/enemy.cpp \
+    data/entity.cpp \
     data/screens/bossfightscreen.cpp \
     data/screens/creditsscreen.cpp \
     data/screens/fightscreen.cpp \
@@ -31,9 +36,14 @@ SOURCES += \
 
 
 HEADERS += \
+    data/actioncards/actioncard.h \
+    data/chars/character.h \
+    data/chars/knight.h \
     data/components/gamemanager.h \
     data/components/mapgenerator.h \
     data/components/musicmanager.h \
+    data/enemies/enemy.h \
+    data/entity.h \
     data/screens/bossfightscreen.h \
     data/screens/creditsscreen.h \
     data/screens/fightscreen.h \
@@ -52,6 +62,7 @@ HEADERS += \
 
 
 FORMS += \
+    data/actioncards/actioncard.ui \
     data/screens/bossfightscreen.ui \
     data/screens/creditsscreen.ui \
     data/screens/fightscreen.ui \

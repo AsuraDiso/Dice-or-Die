@@ -15,6 +15,7 @@ class FightScreen : public Screen
 public:
     explicit FightScreen(QWidget *parent = nullptr, QStackedWidget *stacked = nullptr);
     void resizeScreen(QResizeEvent *event) override;
+    void sizeInit();
     ~FightScreen();
 
 private:

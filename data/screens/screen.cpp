@@ -11,6 +11,7 @@ Screen::Screen(QWidget *parent, QStackedWidget *stacked): QWidget(parent){
     root.setParent(this);
     root.setScaledContents(true);
     root.setPixmap(QPixmap(":/assets/background.png"));
+    timer = new QTimer;
 }
 
 QSize Screen::sizeHint() const
