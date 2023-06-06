@@ -4,6 +4,9 @@
 ProgressBar::ProgressBar(QWidget *parent):QProgressBar(parent)
 {
     setStyleSheet("background-color: white");
+    connect(this, &QProgressBar::valueChanged, [=](){
+        doDelta();
+    });
 }
 
 void ProgressBar::resize(double width, double height){
@@ -34,6 +37,21 @@ void ProgressBar::setScale(int w, int h){
 
 void ProgressBar::setFontSize(int s){
     fontSize = s;
+}
+
+void ProgressBar::doDelta(){
+    QString color;
+    if (value() < 25) {
+        color = "red";
+    } else if (value() < 50) {
+        color = "orange";
+    } else if (value() < 75) {
+        color = "yellow";
+    } else {
+        color = "green";
+    }
+    QString styleSheet = QString("QProgressBar::chunk { background-color: %1; }").arg(color);
+    setStyleSheet(styleSheet);
 }
 
 ProgressBar::~ProgressBar(){}

@@ -47,6 +47,11 @@
      <height>24</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Segoe Script</family>
+    </font>
+   </property>
    <property name="text">
     <string>Exit</string>
    </property>
@@ -59,6 +64,11 @@
      <width>158</width>
      <height>24</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe Script</family>
+    </font>
    </property>
    <property name="text">
     <string>Credits</string>
@@ -73,6 +83,11 @@
      <height>24</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Segoe Script</family>
+    </font>
+   </property>
    <property name="text">
     <string>Options</string>
    </property>
@@ -85,6 +100,11 @@
      <width>158</width>
      <height>24</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe Script</family>
+    </font>
    </property>
    <property name="text">
     <string>Tutorial</string>
@@ -99,6 +119,11 @@
      <height>24</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Segoe Script</family>
+    </font>
+   </property>
    <property name="text">
     <string>Start Game</string>
    </property>
@@ -106,14 +131,14 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>Button</class>
-   <extends>QPushButton</extends>
-   <header>data/widgets/button.h</header>
-  </customwidget>
-  <customwidget>
    <class>TextImage</class>
    <extends>QLabel</extends>
    <header>data/widgets/textimage.h</header>
+  </customwidget>
+  <customwidget>
+   <class>Button</class>
+   <extends>QPushButton</extends>
+   <header>data/widgets/button.h</header>
   </customwidget>
  </customwidgets>
  <resources>
