@@ -10,5 +10,11 @@
         <file>assets/music/omori_trees.mp3</file>
         <file>assets/images/map.png</file>
         <file>assets/images/title.sai2</file>
+        <file>assets/images/dice1.png</file>
+        <file>assets/images/dice2.png</file>
+        <file>assets/images/dice3.png</file>
+        <file>assets/images/dice4.png</file>
+        <file>assets/images/dice5.png</file>
+        <file>assets/images/dice6.png</file>
     </qresource>
 </RCC>

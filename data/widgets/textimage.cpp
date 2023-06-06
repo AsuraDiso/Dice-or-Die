@@ -4,6 +4,15 @@
 TextImage::TextImage(QWidget *parent): QLabel(parent)//, moveable(false)
 {
     moveable = false;
+    anim.setParent(parent);
+    anim.setMovie(&tex);
+}
+
+
+void TextImage::setAnimatedTexture(QString filename){
+    tex.setFileName(filename);
+    tex.start();
+    clear();
 }
 
 void TextImage::resize(double width, double height){
@@ -19,6 +28,9 @@ void TextImage::resize(double width, double height){
     double deltaSize = qMin(width / desiredSize.width(), height / desiredSize.height());
     move(pt.x() * deltaSize, pt.y() * deltaSize);
     setFixedSize(scale.width() * deltaSize, scale.height() * deltaSize);
+    anim.setScaledContents(true);
+    anim.setFixedSize(scale.width() * deltaSize, scale.height() * deltaSize);
+    anim.move(pt.x() * deltaSize, pt.y() * deltaSize);
     QFont newFont = font();
     newFont.setPointSize(fontSize * deltaSize);
     setFont(newFont);

@@ -2,10 +2,13 @@
 
 Entity::Entity()
 {
-    diceamount = 3;
+    diceamount = 2;
     maxhealth = 100;
-    currhealth = 50;
+    currhealth = 75;
     name = "Spider";
+    texture = "://assets/images/enemies/ds_spider.gif";
+    size = QSize(200, 200);
+    offset = QPoint(0, 100);
 }
 void Entity::setHealth(int cur, int maxi){
     currhealth = cur;
@@ -19,7 +22,15 @@ void Entity::deltaHealth(int delta){
 void Entity::setDiceAmount(int amount){
     diceamount = amount;
 }
-
+void Entity::setTexture(QString tex){
+    texture = tex;
+}
+void Entity::setSize(QSize sz){
+    size = sz;
+}
+void Entity::setOffset(QPoint point){
+    offset = point;
+}
 void Entity::setName(QString n){
     name = n;
 }
@@ -34,4 +45,16 @@ int Entity::getMaxHealth(){
 }
 int Entity::getCurrHealth(){
     return currhealth;
+}
+
+QString Entity::getTexture(){
+    return texture;
+}
+
+QSize Entity::getSize(){
+    return size;
+}
+
+QPoint Entity::getOffset(){
+    return offset;
 }

@@ -216,7 +216,13 @@
     </rect>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="../assets.qrc">:/assets/images/dice6.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="TextImage" name="dice_image_2">
@@ -229,7 +235,26 @@
     </rect>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="../assets.qrc">:/assets/images/dice6.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="Button" name="nextturn">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>410</y>
+     <width>80</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Next Turn</string>
    </property>
   </widget>
  </widget>
@@ -243,6 +268,11 @@
    <class>ProgressBar</class>
    <extends>QProgressBar</extends>
    <header>data/widgets/progressbar.h</header>
+  </customwidget>
+  <customwidget>
+   <class>Button</class>
+   <extends>QPushButton</extends>
+   <header>data/widgets/button.h</header>
   </customwidget>
  </customwidgets>
  <resources>

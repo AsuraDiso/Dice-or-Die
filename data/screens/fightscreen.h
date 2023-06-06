@@ -18,6 +18,9 @@ public:
     void sizeInit();
     ~FightScreen();
 
+private slots:
+    void on_nextturn_clicked();
+
 private:
     Ui::FightScreen *ui;
 };

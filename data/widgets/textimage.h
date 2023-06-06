@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QLabel>
 #include <QMouseEvent>
+#include <QMovie>
 
 class TextImage : public QLabel
 {
@@ -16,6 +17,7 @@ public:
     void setScale(int w, int h);
     void setFontSize(int s);
     void setMoveable(bool s);
+    void setAnimatedTexture(QString filename);
     ~TextImage();
 
 protected:
@@ -28,6 +30,8 @@ private:
     int fontSize;
     bool moveable;
     int lastMousePos[2]; //for some reason i can't add new QPoint
+    QMovie tex;
+    QLabel anim;
 };
 
 #endif // TEXTIMAGE_H

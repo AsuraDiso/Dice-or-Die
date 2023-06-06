@@ -18,6 +18,7 @@ SOURCES += \
     data/enemies/enemy.cpp \
     data/entity.cpp \
     data/screens/bossfightscreen.cpp \
+    data/screens/characterchoosescreen.cpp \
     data/screens/creditsscreen.cpp \
     data/screens/fightscreen.cpp \
     data/screens/gamescreen.cpp \
@@ -45,6 +46,7 @@ HEADERS += \
     data/enemies/enemy.h \
     data/entity.h \
     data/screens/bossfightscreen.h \
+    data/screens/characterchoosescreen.h \
     data/screens/creditsscreen.h \
     data/screens/fightscreen.h \
     data/screens/gamescreen.h \
@@ -64,6 +66,7 @@ HEADERS += \
 FORMS += \
     data/actioncards/actioncard.ui \
     data/screens/bossfightscreen.ui \
+    data/screens/characterchoosescreen.ui \
     data/screens/creditsscreen.ui \
     data/screens/fightscreen.ui \
     data/screens/gamescreen.ui \

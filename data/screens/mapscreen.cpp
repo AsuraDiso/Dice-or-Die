@@ -27,6 +27,10 @@ void MapScreen::sizeInit(){
     setBackGroundImage(":/assets/images/map.png");
     ui->levelname->setText(GameManager::getLevelName()+": "+GameManager::getLevelDepth());
     ui->coins->setText(QString::number(GameManager::getCoins()));
+    ui->health_val->setValue(GameManager::getChar().getCurrHealth());
+    ui->health_val->setMaximum(GameManager::getChar().getCurrHealth());
+    ui->nextlevel_xp->setValue(GameManager::getChar().getExp());
+    ui->nextlevel_xp->setMaximum(GameManager::getChar().getNextLevel());
 
     for (int i = ui->gridWidget->layout()->count() - 1; i >= 0; --i) {
         QWidget* widget = ui->gridWidget->layout()->itemAt(i)->widget();
