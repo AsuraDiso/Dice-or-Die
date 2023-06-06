@@ -20,6 +20,7 @@ SOURCES += \
     data/screens/settingsscreen.cpp \
     data/screens/tutorialscreen.cpp \
     data/widgets/button.cpp \
+    data/widgets/progressbar.cpp \
     data/widgets/scrollarea.cpp \
     data/widgets/textimage.cpp \
     data/widgets/widget.cpp \
@@ -44,6 +45,7 @@ HEADERS += \
     data/screens/tutorialscreen.h \
     data/screens/window.h \
     data/widgets/button.h \
+    data/widgets/progressbar.h \
     data/widgets/scrollarea.h \
     data/widgets/textimage.h \
     data/widgets/widget.h
