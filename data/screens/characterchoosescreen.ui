@@ -79,12 +79,12 @@
    </property>
    <property name="icon">
     <iconset resource="../assets.qrc">
-     <normaloff>:/assets/images/dice1.png</normaloff>:/assets/images/dice1.png</iconset>
+     <normaloff>:/assets/images/tutorial/knight.png</normaloff>:/assets/images/tutorial/knight.png</iconset>
    </property>
    <property name="iconSize">
     <size>
-     <width>160</width>
-     <height>160</height>
+     <width>240</width>
+     <height>240</height>
     </size>
    </property>
   </widget>
@@ -102,12 +102,12 @@
    </property>
    <property name="icon">
     <iconset resource="../assets.qrc">
-     <normaloff>:/assets/images/dice1.png</normaloff>:/assets/images/dice1.png</iconset>
+     <normaloff>:/assets/images/tutorial/archer.png</normaloff>:/assets/images/tutorial/archer.png</iconset>
    </property>
    <property name="iconSize">
     <size>
-     <width>160</width>
-     <height>160</height>
+     <width>240</width>
+     <height>240</height>
     </size>
    </property>
   </widget>
@@ -125,12 +125,12 @@
    </property>
    <property name="icon">
     <iconset resource="../assets.qrc">
-     <normaloff>:/assets/images/dice1.png</normaloff>:/assets/images/dice1.png</iconset>
+     <normaloff>:/assets/images/tutorial/witch.png</normaloff>:/assets/images/tutorial/witch.png</iconset>
    </property>
    <property name="iconSize">
     <size>
-     <width>160</width>
-     <height>160</height>
+     <width>240</width>
+     <height>240</height>
     </size>
    </property>
   </widget>
