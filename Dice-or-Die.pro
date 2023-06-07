@@ -28,6 +28,7 @@ SOURCES += \
     data/widgets/button.cpp \
     data/widgets/progressbar.cpp \
     data/widgets/scrollarea.cpp \
+    data/widgets/stackedwidget.cpp \
     data/widgets/textimage.cpp \
     data/widgets/widget.cpp \
     main.cpp \
@@ -59,6 +60,7 @@ HEADERS += \
     data/widgets/button.h \
     data/widgets/progressbar.h \
     data/widgets/scrollarea.h \
+    data/widgets/stackedwidget.h \
     data/widgets/textimage.h \
     data/widgets/widget.h
 

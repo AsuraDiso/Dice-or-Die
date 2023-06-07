@@ -2,7 +2,6 @@
 #include "ui_fightscreen.h"
 #include "../components/gamemanager.h"
 
-
 FightScreen::FightScreen(QWidget *parent, QStackedWidget *stackwidg) :
     Screen(parent, stackwidg),
     ui(new Ui::FightScreen)

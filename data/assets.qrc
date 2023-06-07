@@ -16,5 +16,6 @@
         <file>assets/images/dice4.png</file>
         <file>assets/images/dice5.png</file>
         <file>assets/images/dice6.png</file>
+        <file>assets/images/tutorial/characters.png</file>
     </qresource>
 </RCC>

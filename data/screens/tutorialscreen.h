@@ -17,6 +17,13 @@ public:
     void resizeScreen(QResizeEvent *event) override;
     ~TutorialScreen();
 
+private slots:
+    void on_backbtn_clicked();
+
+    void on_prev_btn_clicked();
+
+    void on_next_btn_clicked();
+
 private:
     Ui::TutorialScreen *ui;
 };
