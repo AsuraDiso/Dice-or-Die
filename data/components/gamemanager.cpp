@@ -1,5 +1,8 @@
 #include "gamemanager.h"
 #include "../chars/knight.h"
+#include "../chars/archer.h"
+#include "../chars/witch.h"
+#include "../enemies/spider.h"
 #include <QDebug>
 #include <QTimer>
 #include <QObject>
@@ -16,8 +19,7 @@ GameManager::GameManager()
 {
     Q_ASSERT(instance == nullptr);
     instance = this;
-    character = new Knight();
-    enemy = new Enemy();
+    enemy = new Spider();
 }
 
 void GameManager::generateNewLevel()
@@ -41,6 +43,9 @@ Enemy GameManager::getEnemy(){
     return *enemy;
 }
 
+bool GameManager::isNoChar(){
+    return character == nullptr;
+}
 QString GameManager::getLevelDepth(){
     return leveldepth;
 }
@@ -67,9 +72,9 @@ void GameManager::playerMoved(int val, QStackedWidget *stacked){
         leveldepth = QString::number(leveldepth.toInt() + 1);
         generateNewLevel();
     } else if (val == 4){
-        stacked->setCurrentIndex(5);
+        stacked->setCurrentIndex(6);
     } else if (val == 5){
-        stacked->setCurrentIndex(5);
+        stacked->setCurrentIndex(6);
     } else if (val == 6){
         qDebug() << "shop";
     }
@@ -78,9 +83,16 @@ void GameManager::setCharacter(QString charc){
     delete character;
     if (charc == "Knight"){
         character = new Knight();
+    } else if (charc == "Archer"){
+        character = new Archer();
     } else {
-        character = new Knight();
+        character = new Witch();
     }
+}
+
+void GameManager::setEnemy(Enemy *en){
+    delete enemy;
+    enemy = en;
 }
 
 void GameManager::startFight(){

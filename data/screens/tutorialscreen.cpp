@@ -13,14 +13,7 @@ void TutorialScreen::resizeScreen(QResizeEvent *event)
 {
     QWidget::resizeEvent(event);
     Screen::updateScale(event);
-    ui->prev_btn->resize(root.width(), root.height());
-    ui->next_btn->resize(root.width(), root.height());
-    ui->pages->resize(root.width(), root.height());
-    ui->backbtn->resize(root.width(), root.height());
-    ui->charecters->resize(root.width(), root.height());
-    ui->charecters->raise();
-    ui->history->resize(root.width(), root.height());
-    ui->history->raise();
+
 }
 
 void TutorialScreen::on_backbtn_clicked()

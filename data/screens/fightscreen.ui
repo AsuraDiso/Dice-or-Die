@@ -84,7 +84,7 @@
     <set>Qt::AlignCenter</set>
    </property>
    <property name="format">
-    <string>%p/100</string>
+    <string>%v/%m</string>
    </property>
   </widget>
   <widget class="ProgressBar" name="enemy_hp">
@@ -102,7 +102,7 @@
     </font>
    </property>
    <property name="layoutDirection">
-    <enum>Qt::RightToLeft</enum>
+    <enum>Qt::LeftToRight</enum>
    </property>
    <property name="value">
     <number>24</number>
@@ -110,8 +110,11 @@
    <property name="alignment">
     <set>Qt::AlignCenter</set>
    </property>
+   <property name="invertedAppearance">
+    <bool>true</bool>
+   </property>
    <property name="format">
-    <string>%p/100</string>
+    <string>%v/%m</string>
    </property>
   </widget>
   <widget class="TextImage" name="char_name">
@@ -272,6 +275,11 @@
  </widget>
  <customwidgets>
   <customwidget>
+   <class>Button</class>
+   <extends>QPushButton</extends>
+   <header>data/widgets/button.h</header>
+  </customwidget>
+  <customwidget>
    <class>TextImage</class>
    <extends>QLabel</extends>
    <header>data/widgets/textimage.h</header>
@@ -280,11 +288,6 @@
    <class>ProgressBar</class>
    <extends>QProgressBar</extends>
    <header>data/widgets/progressbar.h</header>
-  </customwidget>
-  <customwidget>
-   <class>Button</class>
-   <extends>QPushButton</extends>
-   <header>data/widgets/button.h</header>
   </customwidget>
  </customwidgets>
  <resources>

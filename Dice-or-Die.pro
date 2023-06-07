@@ -10,12 +10,15 @@ CONFIG += c++17
 
 SOURCES += \
     data/actioncards/actioncard.cpp \
+    data/chars/archer.cpp \
     data/chars/character.cpp \
     data/chars/knight.cpp \
+    data/chars/witch.cpp \
     data/components/gamemanager.cpp \
     data/components/mapgenerator.cpp \
     data/components/musicmanager.cpp \
     data/enemies/enemy.cpp \
+    data/enemies/spider.cpp \
     data/entity.cpp \
     data/screens/bossfightscreen.cpp \
     data/screens/characterchoosescreen.cpp \
@@ -39,12 +42,15 @@ SOURCES += \
 
 HEADERS += \
     data/actioncards/actioncard.h \
+    data/chars/archer.h \
     data/chars/character.h \
     data/chars/knight.h \
+    data/chars/witch.h \
     data/components/gamemanager.h \
     data/components/mapgenerator.h \
     data/components/musicmanager.h \
     data/enemies/enemy.h \
+    data/enemies/spider.h \
     data/entity.h \
     data/screens/bossfightscreen.h \
     data/screens/characterchoosescreen.h \

@@ -24,12 +24,7 @@ void MainMenuScreen::resizeScreen(QResizeEvent *event)
 {
     QWidget::resizeEvent(event);
     Screen::updateScale(event);
-    ui->logo->resize(root.width(), root.height());
-    ui->start->resize(root.width(), root.height());
-    ui->tutorial->resize(root.width(), root.height());
-    ui->options->resize(root.width(), root.height());
-    ui->credits->resize(root.width(), root.height());
-    ui->exit->resize(root.width(), root.height());
+
 }
 
 void MainMenuScreen::on_exit_clicked()
@@ -42,8 +37,11 @@ void MainMenuScreen::on_start_clicked()
     if (GameManager::getMap().getSize().width() == 0){
         GameManager::generateNewLevel();
     }
-
-    stackwidget->setCurrentIndex(4);
+    if (GameManager::isNoChar()){
+        stackwidget->setCurrentIndex(4);
+    } else {
+        stackwidget->setCurrentIndex(5);
+    }
 }
 
 void MainMenuScreen::on_tutorial_clicked()

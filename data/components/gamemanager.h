@@ -19,6 +19,7 @@ public:
     static void playerMoved(int val, QStackedWidget *stacked);
     static void generateNewEnemy();
     static void setCharacter(QString charc);
+    static void setEnemy(Enemy *en);
     static void startFight();
     static void doAttack();
     static MapGenerator getMap();
@@ -28,6 +29,7 @@ public:
     static QString getCharTexture();
     static Character getChar();
     static Enemy getEnemy();
+    static bool isNoChar();
     static int getBossLevel();
     static int getCurrentHealth();
     static int getMaxHealth();

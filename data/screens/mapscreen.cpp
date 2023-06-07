@@ -13,13 +13,7 @@ void MapScreen::resizeScreen(QResizeEvent *event)
 {
     QWidget::resizeEvent(event);
     Screen::updateScale(event);
-    ui->coins->resize(root.width(), root.height());
-    ui->levelname->resize(root.width(), root.height());
-    ui->level_depth->resize(root.width(), root.height());
-    ui->gridWidget->resize(root.width(), root.height());
-    ui->backbtn->resize(root.width(), root.height());
-    ui->health_val->resize(root.width(), root.height());
-    ui->nextlevel_xp->resize(root.width(), root.height());
+
 }
 
 void MapScreen::sizeInit(){

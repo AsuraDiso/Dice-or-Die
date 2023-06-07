@@ -38,6 +38,13 @@ void Screen::updateScale(QResizeEvent *event){
     int y = (height - label_height) / 2;
     root.setFixedSize(label_width, label_height);
     parentWidget()->parentWidget()->setGeometry(x, y, label_width, label_height);
+    foreach (Widget* widget, this->findChildren<Widget*>()) {widget->resize(label_width, label_height); widget->raise();}
+    foreach (Button* widget, this->findChildren<Button*>()) {widget->resize(label_width, label_height); widget->raise();}
+    foreach (ScrollArea* widget, this->findChildren<ScrollArea*>()) {widget->resize(label_width, label_height); widget->raise();}
+    foreach (ProgressBar* widget, this->findChildren<ProgressBar*>()) {widget->resize(label_width, label_height); widget->raise();}
+    foreach (TextImage* widget, this->findChildren<TextImage*>()) {widget->resize(label_width, label_height); widget->raise();}
+    foreach (StackedWidget* widget, this->findChildren<StackedWidget*>()) {widget->resize(label_width, label_height); widget->raise();}
+
 }
 
 void Screen::setBackGroundImage(QString string)

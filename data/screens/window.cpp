@@ -4,6 +4,7 @@
 #include "ui_window.h"
 #include "mainmenuscreen.h"
 #include "bossfightscreen.h"
+#include "characterchoosescreen.h"
 #include "fightscreen.h"
 #include "mapscreen.h"
 #include "creditsscreen.h"
@@ -19,6 +20,7 @@ Window::Window(QWidget *parent)
 {
     ui->setupUi(this);
     MainMenuScreen* mainscreen = new MainMenuScreen(this, ui->stackedWidget);
+    CharacterChooseScreen* choosescreen = new CharacterChooseScreen(this, ui->stackedWidget);
     MapScreen* mapscreen = new MapScreen(this, ui->stackedWidget);
     FightScreen* fightscreen = new FightScreen(this);//, ui->stackedWidget
     BossFightScreen* bossfightscreen = new BossFightScreen(this);//, ui->stackedWidget
@@ -29,6 +31,7 @@ Window::Window(QWidget *parent)
     ui->stackedWidget->addWidget(tutorialscreen);
     ui->stackedWidget->addWidget(settingsscreen);
     ui->stackedWidget->addWidget(creditsscreen);
+    ui->stackedWidget->addWidget(choosescreen);
     ui->stackedWidget->addWidget(mapscreen);
     ui->stackedWidget->addWidget(fightscreen);
     ui->stackedWidget->addWidget(bossfightscreen);

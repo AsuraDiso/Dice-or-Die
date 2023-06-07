@@ -8,6 +8,12 @@
 #include <QResizeEvent>
 #include <QShowEvent>
 #include <QTimer>
+#include "../widgets/widget.h"
+#include "../widgets/stackedwidget.h"
+#include "../widgets/button.h"
+#include "../widgets/scrollarea.h"
+#include "../widgets/textimage.h"
+#include "../widgets/progressbar.h"
 
 namespace Ui {
 class Screen;

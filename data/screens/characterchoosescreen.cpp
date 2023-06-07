@@ -14,7 +14,6 @@ void CharacterChooseScreen::resizeScreen(QResizeEvent *event)
 {
     QWidget::resizeEvent(event);
     Screen::updateScale(event);
-
 }
 
 void CharacterChooseScreen::sizeInit(){
@@ -22,8 +21,40 @@ void CharacterChooseScreen::sizeInit(){
 
 }
 
+
+void CharacterChooseScreen::startGame()
+{
+    stackwidget->setCurrentIndex(5);
+}
+
+void CharacterChooseScreen::on_charicon_clicked()
+{
+    GameManager::setCharacter("Knight");
+    startGame();
+}
+
+
+void CharacterChooseScreen::on_charicon_2_clicked()
+{
+    GameManager::setCharacter("Archer");
+    startGame();
+}
+
+
+void CharacterChooseScreen::on_charicon_3_clicked()
+{
+    GameManager::setCharacter("Witch");
+    startGame();
+}
+
+
+void CharacterChooseScreen::on_backbtn_clicked()
+{
+    stackwidget->setCurrentIndex(0);
+}
+
+
 CharacterChooseScreen::~CharacterChooseScreen()
 {
     delete ui;
 }
-

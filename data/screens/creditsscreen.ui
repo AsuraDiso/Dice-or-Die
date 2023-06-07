@@ -14,6 +14,9 @@
    <string>Form</string>
   </property>
   <widget class="ScrollArea" name="scrollArea">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>100</x>
@@ -35,6 +38,9 @@
     <bool>false</bool>
    </property>
    <widget class="Widget" name="scrollAreaWidgetContents">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -47,7 +53,7 @@
      <property name="geometry">
       <rect>
        <x>220</x>
-       <y>10</y>
+       <y>480</y>
        <width>181</width>
        <height>31</height>
       </rect>
@@ -70,8 +76,8 @@
     <widget class="TextImage" name="label_2">
      <property name="geometry">
       <rect>
-       <x>260</x>
-       <y>70</y>
+       <x>250</x>
+       <y>540</y>
        <width>111</width>
        <height>31</height>
       </rect>
@@ -94,8 +100,8 @@
     <widget class="TextImage" name="label_3">
      <property name="geometry">
       <rect>
-       <x>220</x>
-       <y>110</y>
+       <x>210</x>
+       <y>580</y>
        <width>201</width>
        <height>31</height>
       </rect>
@@ -118,8 +124,8 @@
     <widget class="TextImage" name="label_4">
      <property name="geometry">
       <rect>
-       <x>210</x>
-       <y>150</y>
+       <x>200</x>
+       <y>620</y>
        <width>221</width>
        <height>31</height>
       </rect>
@@ -142,8 +148,8 @@
     <widget class="TextImage" name="label_5">
      <property name="geometry">
       <rect>
-       <x>260</x>
-       <y>190</y>
+       <x>250</x>
+       <y>660</y>
        <width>111</width>
        <height>31</height>
       </rect>
@@ -166,8 +172,8 @@
     <widget class="TextImage" name="label_7">
      <property name="geometry">
       <rect>
-       <x>260</x>
-       <y>270</y>
+       <x>250</x>
+       <y>740</y>
        <width>111</width>
        <height>31</height>
       </rect>
@@ -190,8 +196,8 @@
     <widget class="TextImage" name="label_9">
      <property name="geometry">
       <rect>
-       <x>220</x>
-       <y>310</y>
+       <x>210</x>
+       <y>780</y>
        <width>201</width>
        <height>31</height>
       </rect>
@@ -214,8 +220,8 @@
     <widget class="TextImage" name="label_10">
      <property name="geometry">
       <rect>
-       <x>40</x>
-       <y>430</y>
+       <x>30</x>
+       <y>900</y>
        <width>531</width>
        <height>31</height>
       </rect>
@@ -238,8 +244,8 @@
     <widget class="TextImage" name="label_8">
      <property name="geometry">
       <rect>
-       <x>260</x>
-       <y>390</y>
+       <x>250</x>
+       <y>860</y>
        <width>111</width>
        <height>31</height>
       </rect>
@@ -262,8 +268,8 @@
     <widget class="TextImage" name="label_11">
      <property name="geometry">
       <rect>
-       <x>40</x>
-       <y>470</y>
+       <x>30</x>
+       <y>940</y>
        <width>531</width>
        <height>31</height>
       </rect>
@@ -286,8 +292,8 @@
     <widget class="TextImage" name="label_12">
      <property name="geometry">
       <rect>
-       <x>40</x>
-       <y>510</y>
+       <x>30</x>
+       <y>980</y>
        <width>531</width>
        <height>31</height>
       </rect>
@@ -310,8 +316,8 @@
     <widget class="TextImage" name="label_13">
      <property name="geometry">
       <rect>
-       <x>40</x>
-       <y>550</y>
+       <x>30</x>
+       <y>1020</y>
        <width>531</width>
        <height>31</height>
       </rect>
@@ -334,8 +340,8 @@
     <widget class="TextImage" name="label_14">
      <property name="geometry">
       <rect>
-       <x>40</x>
-       <y>590</y>
+       <x>30</x>
+       <y>1060</y>
        <width>531</width>
        <height>31</height>
       </rect>
@@ -358,8 +364,8 @@
     <widget class="TextImage" name="label_15">
      <property name="geometry">
       <rect>
-       <x>40</x>
-       <y>630</y>
+       <x>30</x>
+       <y>1100</y>
        <width>531</width>
        <height>31</height>
       </rect>
@@ -382,8 +388,8 @@
     <widget class="TextImage" name="label_16">
      <property name="geometry">
       <rect>
-       <x>40</x>
-       <y>710</y>
+       <x>30</x>
+       <y>1180</y>
        <width>531</width>
        <height>31</height>
       </rect>
@@ -406,8 +412,8 @@
     <widget class="TextImage" name="label_17">
      <property name="geometry">
       <rect>
-       <x>40</x>
-       <y>670</y>
+       <x>30</x>
+       <y>1140</y>
        <width>531</width>
        <height>31</height>
       </rect>
