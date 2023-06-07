@@ -70,23 +70,23 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>5</number>
    </property>
    <widget class="QWidget" name="page_1">
     <widget class="TextImage" name="history">
      <property name="geometry">
       <rect>
-       <x>320</x>
+       <x>300</x>
        <y>10</y>
-       <width>101</width>
-       <height>21</height>
+       <width>151</width>
+       <height>41</height>
       </rect>
      </property>
      <property name="font">
       <font>
        <family>Candara Light</family>
-       <pointsize>24</pointsize>
-       <italic>true</italic>
+       <pointsize>36</pointsize>
+       <italic>false</italic>
        <bold>false</bold>
       </font>
      </property>
@@ -98,26 +98,484 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>50</y>
-       <width>421</width>
-       <height>201</height>
+       <y>80</y>
+       <width>361</width>
+       <height>171</height>
       </rect>
      </property>
      <property name="text">
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="../assets.qrc">:/assets/images/tutorial/characters.png</pixmap>
+      <pixmap>:/assets/images/tutorial/characters.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
      </property>
     </widget>
+    <widget class="TextImage" name="history_desc">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>80</y>
+       <width>291</width>
+       <height>171</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Candara Light</family>
+       <pointsize>16</pointsize>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Trzej towarzysze postanawiają zagrać w grę, którą kupili na wyprzedaży gier planszowych. Na początku gra wydawała się nudna i mało interesująca.</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignJustify|Qt::AlignVCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="TextImage" name="history_desc_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>270</y>
+       <width>691</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Candara Light</family>
+       <pointsize>16</pointsize>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Jednak w pewnym momencie wszyscy biorący udział w grze gracze zostają przeniesieni do świata gry, gdzie każdy z nich wciela się w inną klasę postaci: Rycerza, Archera, Wiedźmę.</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignJustify|Qt::AlignVCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
    </widget>
-   <widget class="QWidget" name="page_4"/>
-   <widget class="QWidget" name="page_5"/>
-   <widget class="QWidget" name="page_2"/>
-   <widget class="QWidget" name="page_3"/>
+   <widget class="QWidget" name="page_2">
+    <widget class="TextImage" name="knight">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>10</y>
+       <width>161</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Candara Light</family>
+       <pointsize>36</pointsize>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>RYCERZ</string>
+     </property>
+    </widget>
+    <widget class="TextImage" name="knight_image">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>60</y>
+       <width>171</width>
+       <height>281</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>:/assets/images/tutorial/knight.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="TextImage" name="knight_desc">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>80</y>
+       <width>341</width>
+       <height>241</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Candara Light</family>
+       <pointsize>16</pointsize>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Rycerz jest jedną z 3 postaci dostępnych w grze. Od samego początku jest bohaterem jawnym. Posiada standardową mechanikę. Ma 3 kostki.</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignJustify|Qt::AlignVCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_3">
+    <widget class="TextImage" name="archer">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>10</y>
+       <width>171</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Candara Light</family>
+       <pointsize>36</pointsize>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>ARCHER</string>
+     </property>
+    </widget>
+    <widget class="TextImage" name="archer_image">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>60</y>
+       <width>171</width>
+       <height>281</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>:/assets/images/tutorial/archer.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="TextImage" name="archer_desc">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>90</y>
+       <width>351</width>
+       <height>201</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Candara Light</family>
+       <pointsize>16</pointsize>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Archer jest drugą postacią odblokowywaną po pierwszym przejściu gry. Ma podobną mechanikę do Rycerza, ale na początku ma 2 kości.</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignJustify|Qt::AlignVCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_4">
+    <widget class="TextImage" name="witch">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>10</y>
+       <width>211</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Candara Light</family>
+       <pointsize>36</pointsize>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>WIEDŹMA</string>
+     </property>
+    </widget>
+    <widget class="TextImage" name="witch_image">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>60</y>
+       <width>211</width>
+       <height>271</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>:/assets/images/tutorial/witch.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="TextImage" name="witch_desc">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>120</y>
+       <width>361</width>
+       <height>151</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Candara Light</family>
+       <pointsize>16</pointsize>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Wiedźma to trzecia postać odblokowana po przejściu gry jako Archer. Ma podobną mechanikę do Archera, ale może rzucić kośćmi za 2 obrażenia za każdą.</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignJustify|Qt::AlignVCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_5">
+    <widget class="TextImage" name="konception">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>10</y>
+       <width>251</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Candara Light</family>
+       <pointsize>36</pointsize>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>KONCEPCJA</string>
+     </property>
+    </widget>
+    <widget class="TextImage" name="konception_desc">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>701</width>
+       <height>271</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Candara Light</family>
+       <pointsize>16</pointsize>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Istotą gry jest rzucanie kośćmi o różnych wartościach.
+
+Liczba kości zależy od gracza lub wrogiego stwora, z którym walczy gracz. Zabijając stwora, gracz otrzymuje walutę w grze, za którą można kupić coś w kuźni w trakcie gry (pieniądze są resetowane po rozpoczęciu nowej gry). Również doświadczenie spada ze stworzeń, przy określonej ilości doświadczenia poziom gracza wzrasta. Kiedy gracz awansuje, pojawia się dodatkowa kość lub karta akcji, zdrowie zostaje przywrócone. Zdrowie jest oszczędzane między walkami.</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignJustify|Qt::AlignVCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_6">
+    <widget class="TextImage" name="mechanics">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>10</y>
+       <width>261</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Candara Light</family>
+       <pointsize>36</pointsize>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>MECHANIKA</string>
+     </property>
+    </widget>
+    <widget class="TextImage" name="mechanics_desc">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>701</width>
+       <height>301</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Candara Light</family>
+       <pointsize>16</pointsize>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>⬥ Różne klątwy, które mogą pojawiać się w grze z czasem (w zależności od złożoności postaci;
+⬥ Plecak z kartami (schowek);
+⬥ Stworzenia mogą nakładać na gracza różne efekty:
+    ⚬ ślepota;
+    ⚬ trucizna;
+    ⚬ zepsucie;
+    ⚬ tarcza;
+    ⚬ odbicie;
+    ⚬ gniew.</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignJustify|Qt::AlignVCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_7">
+    <widget class="TextImage" name="blindness">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>120</y>
+       <width>191</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Candara Light</family>
+       <pointsize>36</pointsize>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>ŚLEPOTA</string>
+     </property>
+    </widget>
+    <widget class="TextImage" name="blindness_desc">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>200</y>
+       <width>201</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Candara Light</family>
+       <pointsize>16</pointsize>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>nie widać kości</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_8">
+    <widget class="TextImage" name="poison_desc">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>160</y>
+       <width>621</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Candara Light</family>
+       <pointsize>16</pointsize>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>zdrowie jest odbierane co turę. (Na przykład: graczowi nałożono 10 trucizn, co oznacza, że 10 zdrowia zostanie usunięte na turę, a w następnej turze 9 i tak dalej, aż do 0)</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="TextImage" name="poison">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>90</y>
+       <width>221</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Candara Light</family>
+       <pointsize>36</pointsize>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>TRUCIZNA</string>
+     </property>
+    </widget>
+   </widget>
   </widget>
   <widget class="Button" name="backbtn">
    <property name="geometry">
@@ -158,8 +616,6 @@
    <header>data/widgets/textimage.h</header>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="../assets.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
