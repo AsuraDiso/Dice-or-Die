@@ -35,7 +35,7 @@ Window::Window(QWidget *parent)
     ui->stackedWidget->addWidget(mapscreen);
     ui->stackedWidget->addWidget(fightscreen);
     ui->stackedWidget->addWidget(bossfightscreen);
-    ui->stackedWidget->setCurrentWidget(tutorialscreen); //mainscreen
+    ui->stackedWidget->setCurrentWidget(mainscreen); //mainscreen
 }
 
 void Window::resizeEvent(QResizeEvent *event)

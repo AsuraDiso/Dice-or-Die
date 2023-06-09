@@ -45,7 +45,8 @@ void Screen::updateScale(QResizeEvent *event){
     foreach (TextImage* widget, this->findChildren<TextImage*>()) {widget->resize(label_width, label_height); widget->raise();}
     foreach (TextEdit* widget, this->findChildren<TextEdit*>()) {widget->resize(label_width, label_height); widget->raise();}
     foreach (StackedWidget* widget, this->findChildren<StackedWidget*>()) {widget->resize(label_width, label_height); widget->raise();}
-
+    foreach (Slider* widget, this->findChildren<Slider*>()) {widget->resize(label_width, label_height); widget->raise();}
+    foreach (CheckBox* widget, this->findChildren<CheckBox*>()) {widget->resize(label_width, label_height); widget->raise();}
 }
 
 void Screen::setBackGroundImage(QString string)

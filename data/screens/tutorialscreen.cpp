@@ -53,3 +53,7 @@ void TutorialScreen::on_next_btn_clicked()
     ui->pages->setCurrentIndex(ind);
 }
 
+void TutorialScreen::sizeInit(){
+    Screen::sizeInit();
+    ui->pages->setCurrentIndex(0);
+}

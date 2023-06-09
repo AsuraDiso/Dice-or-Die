@@ -1,5 +1,6 @@
 #include "settingsscreen.h"
 #include "ui_settingsscreen.h"
+#include "../components/musicmanager.h"
 
 SettingsScreen::SettingsScreen(QWidget *parent, QStackedWidget *stackwidg) :
     Screen(parent, stackwidg),
@@ -19,3 +20,21 @@ SettingsScreen::~SettingsScreen()
 {
     delete ui;
 }
+
+void SettingsScreen::on_backbtn_clicked()
+{
+    stackwidget->setCurrentIndex(0);
+}
+
+
+void SettingsScreen::on_music_volume_valueChanged(int value)
+{
+    MusicManager::setMusicVolume(value);
+}
+
+
+void SettingsScreen::on_sounds_volume_valueChanged(int value)
+{
+    MusicManager::setSoundsVolume(value);
+}
+

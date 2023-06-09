@@ -15,6 +15,7 @@ class TutorialScreen : public Screen
 public:
     explicit TutorialScreen(QWidget *parent = nullptr, QStackedWidget *stacked = nullptr);
     void resizeScreen(QResizeEvent *event) override;
+    void sizeInit();
     ~TutorialScreen();
 
 private slots:

@@ -17,6 +17,13 @@ public:
     void resizeScreen(QResizeEvent *event) override;
     ~SettingsScreen();
 
+private slots:
+    void on_backbtn_clicked();
+
+    void on_music_volume_valueChanged(int value);
+
+    void on_sounds_volume_valueChanged(int value);
+
 private:
     Ui::SettingsScreen *ui;
 };
