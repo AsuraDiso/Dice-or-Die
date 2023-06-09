@@ -101,6 +101,9 @@
    <property name="value">
     <number>24</number>
    </property>
+   <property name="format">
+    <string>%v/%m</string>
+   </property>
   </widget>
   <widget class="ProgressBar" name="nextlevel_xp">
    <property name="geometry">
@@ -114,6 +117,9 @@
    <property name="value">
     <number>24</number>
    </property>
+   <property name="format">
+    <string>%v/%m</string>
+   </property>
   </widget>
  </widget>
  <customwidgets>
@@ -121,12 +127,6 @@
    <class>TextImage</class>
    <extends>QLabel</extends>
    <header>data/widgets/textimage.h</header>
-  </customwidget>
-  <customwidget>
-   <class>Widget</class>
-   <extends>QWidget</extends>
-   <header>data/widgets/widget.h</header>
-   <container>1</container>
   </customwidget>
   <customwidget>
    <class>Button</class>
@@ -137,6 +137,12 @@
    <class>ProgressBar</class>
    <extends>QProgressBar</extends>
    <header>data/widgets/progressbar.h</header>
+  </customwidget>
+  <customwidget>
+   <class>Widget</class>
+   <extends>QWidget</extends>
+   <header>data/widgets/widget.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources/>

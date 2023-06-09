@@ -19,6 +19,7 @@ void Button::resize(double width, double height){
     double deltaSize = qMin((double)width / desiredSize.width(), (double)height / desiredSize.height());
     move(pt.x()*deltaSize, pt.y()*deltaSize);
     setFixedSize(scale.width()*deltaSize, scale.height()*deltaSize);
+    setIconSize(scale*deltaSize);
     QFont newFont = font();
     newFont.setPointSize(fontSize*deltaSize);
     setFont(newFont);

@@ -10,7 +10,7 @@ Bandage::Bandage(QWidget *parent) :
 }
 
 void Bandage::onUse(Entity *caster, Entity *target, int val){
-    caster->deltaHealth(val);
+    caster->deltaHealth(val, target);
 }
 
 bool Bandage::canUse(int val){

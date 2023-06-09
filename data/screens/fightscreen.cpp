@@ -34,9 +34,12 @@ FightScreen::FightScreen(QWidget *parent, QStackedWidget *stackwidg) :
                             caster->setCorruption(-rand()%3+1);
                         }
                     }
-
+                    if (caster->getRage() > 0){
+                        card->onUse(caster, enemy, dice->getDiceVal());
+                        caster->setRage(-1);
+                    }
                     if (dice->isBurn()){
-                        caster->deltaHealth(-2);
+                        caster->deltaHealth(-2, enemy);
                     }
                     card->onUse(caster, enemy, dice->getDiceVal());
                     delete dice;
@@ -125,7 +128,6 @@ void FightScreen::on_nextturn_clicked()
 
     timer->setInterval(100);
 
-    qDebug() << GameManager::getChar()->getPoison();
     if (GameManager::getChar()->getPoison() > 0){
         GameManager::getChar()->setHealth(GameManager::getChar()->getCurrHealth()-GameManager::getChar()->getPoison(), GameManager::getChar()->getMaxHealth());
         GameManager::getChar()->setPoison(-1);

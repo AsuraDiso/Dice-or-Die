@@ -14,13 +14,16 @@ public:
     void setPosition(int x, int y);
     void setScale(int w, int h);
     void setFontSize(int s);
+    void setStaticColor(QString color);
     void doDelta();
+    void setMaximum(int maximum);
     ~ProgressBar();
 
 private:
     QPoint pt;
     QSize scale;
     int fontSize;
+    QString staticcolor;
 };
 
 #endif // PROGRESSBAR_H

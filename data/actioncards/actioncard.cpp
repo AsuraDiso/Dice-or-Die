@@ -11,8 +11,7 @@ ActionCard::ActionCard(QWidget *parent) :
 }
 
 void ActionCard::onUse(Entity *caster, Entity *target, int val){
-    target->deltaHealth(-val*2);
-    caster->deltaHealth(-val);
+    target->deltaHealth(-val, caster);
 }
 
 bool ActionCard::canUse(int val){

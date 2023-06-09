@@ -10,7 +10,7 @@ Sword::Sword(QWidget *parent) :
 }
 
 void Sword::onUse(Entity *caster, Entity *target, int val){
-    target->deltaHealth(-val);
+    target->deltaHealth(-val, caster);
 }
 
 bool Sword::canUse(int val){

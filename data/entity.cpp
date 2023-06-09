@@ -5,16 +5,16 @@ Entity::Entity()
 {
     diceamount = 2;
     cardsamount = 3;
-    maxhealth = 100;
-    currhealth = 75;
+    maxhealth = 24;
+    currhealth = 24;
     name = "Spider";
 
     shield = 0;
-    corruption = 5;
+    corruption = 0;
     poison = 0;
-    burn = 2;
-    reflect = 0;
-    blindness = 1;
+    burn = 0;
+    reflect = 5;
+    blindness = 0;
     rage = 0;
 
     texture = "://assets/images/enemies/ds_spider.gif";
@@ -26,10 +26,15 @@ void Entity::setHealth(int cur, int maxi){
     maxhealth = maxi;
 }
 
-void Entity::deltaHealth(int delta){
+void Entity::deltaHealth(int delta, Entity* entity){
     int dlt = 0;
     if (delta < 0){
-        dlt = shield + delta;
+        dlt = shield + reflect + delta;
+        if (reflect > 0){
+            entity->setHealth(entity->getCurrHealth()-reflect, entity->getMaxHealth());
+            reflect -= rand()%3+1;
+            if (reflect < 0){reflect = 0;}
+        }
         if (dlt < 0){
             currhealth += dlt;
         } else {

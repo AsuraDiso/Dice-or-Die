@@ -38,7 +38,6 @@ void TextImage::resize(double width, double height){
     anim.setFixedSize(scale.width() * deltaSize, scale.height() * deltaSize);
     anim.move(pt.x() * deltaSize, pt.y() * deltaSize);
     burneffect.setFixedSize(50 * deltaSize, 50 * deltaSize);
-    burneffect.move(0 * deltaSize, 0 * deltaSize);
     QFont newFont = font();
     newFont.setPointSize(fontSize * deltaSize);
     setFont(newFont);

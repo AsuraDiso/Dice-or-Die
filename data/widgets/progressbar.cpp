@@ -4,6 +4,8 @@
 ProgressBar::ProgressBar(QWidget *parent):QProgressBar(parent)
 {
     setStyleSheet("background-color: white");
+    staticcolor = "";
+    doDelta();
     connect(this, &QProgressBar::valueChanged, [=](){
         doDelta();
     });
@@ -39,19 +41,33 @@ void ProgressBar::setFontSize(int s){
     fontSize = s;
 }
 
+void ProgressBar::setStaticColor(QString color){
+    staticcolor = color;
+}
+
 void ProgressBar::doDelta(){
-    QString color;
-    if (value() < 25) {
-        color = "red";
-    } else if (value() < 50) {
-        color = "orange";
-    } else if (value() < 75) {
-        color = "yellow";
-    } else {
-        color = "green";
+    QString color = staticcolor;
+    if (staticcolor == ""){
+        double percent = (double)value() / maximum() * 100.0;
+
+        if (percent < 25) {
+            color = "red";
+        } else if (percent < 50) {
+            color = "orange";
+        } else if (percent < 75) {
+            color = "yellow";
+        } else {
+            color = "green";
+        }
     }
+
     QString styleSheet = QString("QProgressBar::chunk { background-color: %1; }").arg(color);
     setStyleSheet(styleSheet);
+}
+
+void ProgressBar::setMaximum(int maximum){
+    QProgressBar::setMaximum(maximum);
+    doDelta();
 }
 
 ProgressBar::~ProgressBar(){}

@@ -47,7 +47,8 @@ void GameManager::EntitiesUpdate(){
     if (character->getCurrHealth() <= 0) {
         startNewGame();
     } else if (enemy->getCurrHealth() <= 0){
-        qDebug() << "ENEMY DIED";
+        character->setLevel(character->getLevel(), character->getNextLevel(), character->getExp()+1);
+        coins += 1;
     }
 }
 

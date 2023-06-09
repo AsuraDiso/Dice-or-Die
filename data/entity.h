@@ -10,7 +10,7 @@ class Entity
     public:
         Entity();
         void setHealth(int cur, int maxi);
-        void deltaHealth(int delta);
+        void deltaHealth(int delta, Entity* entity);
         void setDiceAmount(int amount);
         void setName(QString exp);
         void setTexture(QString tex);

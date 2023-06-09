@@ -7,6 +7,7 @@ MapScreen::MapScreen(QWidget *parent, QStackedWidget *stackwidg) :
     ui(new Ui::MapScreen)
 {
     ui->setupUi(this);
+    ui->nextlevel_xp->setStaticColor("yellow");
 }
 
 void MapScreen::resizeScreen(QResizeEvent *event)
@@ -22,7 +23,7 @@ void MapScreen::sizeInit(){
     ui->levelname->setText(GameManager::getLevelName()+": "+GameManager::getLevelDepth());
     ui->coins->setText(QString::number(GameManager::getCoins()));
     ui->health_val->setValue(GameManager::getChar()->getCurrHealth());
-    ui->health_val->setMaximum(GameManager::getChar()->getCurrHealth());
+    ui->health_val->setMaximum(GameManager::getChar()->getMaxHealth());
     ui->nextlevel_xp->setValue(GameManager::getChar()->getExp());
     ui->nextlevel_xp->setMaximum(GameManager::getChar()->getNextLevel());
 
