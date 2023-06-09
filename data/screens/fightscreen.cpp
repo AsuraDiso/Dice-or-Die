@@ -3,16 +3,6 @@
 #include "../components/gamemanager.h"
 #include "../actioncards/actioncard.h"
 
-FightScreen::FightScreen(QWidget *parent, QStackedWidget *stackwidg) :
-    Screen(parent, stackwidg),
-    ui(new Ui::FightScreen)
-{
-    ui->setupUi(this);
-    setBackGroundImage(":/assets/images/background.png");
-    ui->enemy->setPixmap(ui->enemy->pixmap().transformed(QTransform().scale(-1, 1)));
-    updateEntitiesTextures();
-}
-
 bool areWidgetsClose(QWidget* widget1, QWidget* widget2, int threshold)
 {
     QRect rect1 = widget1->geometry();
@@ -22,6 +12,30 @@ bool areWidgetsClose(QWidget* widget1, QWidget* widget2, int threshold)
     rect2.adjust(-threshold, -threshold, threshold, threshold);
 
     return rect1.intersects(rect2);
+}
+
+FightScreen::FightScreen(QWidget *parent, QStackedWidget *stackwidg) :
+    Screen(parent, stackwidg),
+    ui(new Ui::FightScreen)
+{
+    ui->setupUi(this);
+    setBackGroundImage(":/assets/images/background.png");
+    ui->enemy->setPixmap(ui->enemy->pixmap().transformed(QTransform().scale(-1, 1)));
+    updateEntitiesTextures();
+
+    connect(timer, &QTimer::timeout, this, [=]() {
+        for (ActionCard* card : this->findChildren<ActionCard*>()) {
+            for (TextImage* dice : this->findChildren<TextImage*>()) {
+                if (dice && dice->isDice() && card && card->canUse(dice->getDiceVal()) && areWidgetsClose(dice, card, -50)) {
+                    Entity *caster = GameManager::getChar();
+                    Entity *enemy = GameManager::getEnemy();
+                    card->onUse(caster, enemy, dice->getDiceVal());
+                    delete dice;
+                    sizeInit();
+                }
+            }
+        }
+    });
 }
 
 void FightScreen::resizeScreen(QResizeEvent *event)
@@ -41,6 +55,12 @@ void FightScreen::sizeInit()
     ui->enemy_hp->setMaximum(GameManager::getEnemy()->getMaxHealth());
     ui->char_dices->setText(QString::number(GameManager::getChar()->getDiceAmount()) + "x");
     ui->enemy_dices->setText(QString::number(GameManager::getEnemy()->getDiceAmount()) + "x");
+    for (ActionCard* card : this->findChildren<ActionCard*>()) {
+        card->raise();
+    }
+    for (TextImage* dice : this->findChildren<TextImage*>()) {
+        dice->raise();
+    }
 }
 
 FightScreen::~FightScreen()
@@ -67,6 +87,7 @@ void FightScreen::on_nextturn_clicked()
         if ((i + 1) % 6 == 0)
             j++;
         card->show();
+        card->raise();
     }
 
     for (int i = 0; i < GameManager::getChar()->getDiceAmount(); i++) {
@@ -79,25 +100,18 @@ void FightScreen::on_nextturn_clicked()
         if ((i + 1) % 6 == 0)
             j++;
         dice->show();
+        dice->raise();
     }
 
-    QTimer* timer = new QTimer(this);
     timer->setInterval(100);
-
-    connect(timer, &QTimer::timeout, this, [=]() {
-        for (ActionCard* card : this->findChildren<ActionCard*>()) {
-            for (TextImage* dice : this->findChildren<TextImage*>()) {
-                if (dice && dice->isDice() && card && card->canUse(dice->getDiceVal()) && areWidgetsClose(dice, card, -50)) {
-                    Entity *test = GameManager::getChar();
-                    card->onUse(test, dice->getDiceVal());
-                    delete dice;
-                    sizeInit();
-                }
-            }
-        }
-    });
 
 
     // Start the timer
     timer->start();
 }
+
+void FightScreen::on_pushButton_clicked()
+{
+    stackwidget->setCurrentIndex(0);
+}
+

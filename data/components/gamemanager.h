@@ -22,6 +22,8 @@ public:
     static void setEnemy(Enemy *en);
     static void startFight();
     static void doAttack();
+    static void EntitiesUpdate();
+    static void startNewGame();
     static MapGenerator getMap();
     static QString getLevelDepth();
     static QString getLevelName();

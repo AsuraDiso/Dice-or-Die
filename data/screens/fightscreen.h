@@ -22,6 +22,8 @@ public:
 private slots:
     void on_nextturn_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::FightScreen *ui;
 };

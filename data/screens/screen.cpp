@@ -43,10 +43,10 @@ void Screen::updateScale(QResizeEvent *event){
     foreach (ScrollArea* widget, this->findChildren<ScrollArea*>()) {widget->resize(label_width, label_height); widget->raise();}
     foreach (ProgressBar* widget, this->findChildren<ProgressBar*>()) {widget->resize(label_width, label_height); widget->raise();}
     foreach (TextImage* widget, this->findChildren<TextImage*>()) {widget->resize(label_width, label_height); widget->raise();}
-    foreach (TextEdit* widget, this->findChildren<TextEdit*>()) {widget->resize(label_width, label_height); widget->raise();}
     foreach (StackedWidget* widget, this->findChildren<StackedWidget*>()) {widget->resize(label_width, label_height); widget->raise();}
     foreach (Slider* widget, this->findChildren<Slider*>()) {widget->resize(label_width, label_height); widget->raise();}
     foreach (CheckBox* widget, this->findChildren<CheckBox*>()) {widget->resize(label_width, label_height); widget->raise();}
+    foreach (ActionCard* widget, this->findChildren<ActionCard*>()) {widget->resize(label_width, label_height); widget->raise();}
 }
 
 void Screen::setBackGroundImage(QString string)

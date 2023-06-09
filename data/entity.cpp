@@ -1,4 +1,5 @@
 #include "entity.h"
+#include "components/gamemanager.h"
 
 Entity::Entity()
 {
@@ -18,6 +19,7 @@ void Entity::setHealth(int cur, int maxi){
 
 void Entity::deltaHealth(int delta){
     currhealth += delta;
+    GameManager::EntitiesUpdate();
 }
 
 void Entity::setDiceAmount(int amount){

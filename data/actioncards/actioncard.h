@@ -14,7 +14,7 @@ class ActionCard : public Button
 
 public:
     explicit ActionCard(QWidget *parent = nullptr);
-    void onUse(Entity *target, int val);
+    void onUse(Entity *caster, Entity *target, int val);
     bool canUse(int val);
     void setPosition(int x, int y);
     void setScale(int w, int h);

@@ -34,7 +34,6 @@ SOURCES += \
     data/widgets/scrollarea.cpp \
     data/widgets/slider.cpp \
     data/widgets/stackedwidget.cpp \
-    data/widgets/textedit.cpp \
     data/widgets/textimage.cpp \
     data/widgets/widget.cpp \
     main.cpp \
@@ -72,7 +71,6 @@ HEADERS += \
     data/widgets/scrollarea.h \
     data/widgets/slider.h \
     data/widgets/stackedwidget.h \
-    data/widgets/textedit.h \
     data/widgets/textimage.h \
     data/widgets/widget.h
 

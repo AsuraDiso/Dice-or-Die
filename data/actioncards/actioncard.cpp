@@ -10,13 +10,13 @@ ActionCard::ActionCard(QWidget *parent) :
     ui->setupUi(this);
 }
 
-void ActionCard::onUse(Entity *target, int val){
-    target->deltaHealth(-val);
-    qDebug() << target->getCurrHealth();
+void ActionCard::onUse(Entity *caster, Entity *target, int val){
+    target->deltaHealth(-val*2);
+    caster->deltaHealth(-val);
 }
 
 bool ActionCard::canUse(int val){
-    return val < 5;
+    return true;
 }
 
 void ActionCard::setPosition(int x, int y){

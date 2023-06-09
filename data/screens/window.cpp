@@ -22,7 +22,7 @@ Window::Window(QWidget *parent)
     MainMenuScreen* mainscreen = new MainMenuScreen(this, ui->stackedWidget);
     CharacterChooseScreen* choosescreen = new CharacterChooseScreen(this, ui->stackedWidget);
     MapScreen* mapscreen = new MapScreen(this, ui->stackedWidget);
-    FightScreen* fightscreen = new FightScreen(this);//, ui->stackedWidget
+    FightScreen* fightscreen = new FightScreen(this, ui->stackedWidget);
     BossFightScreen* bossfightscreen = new BossFightScreen(this);//, ui->stackedWidget
     TutorialScreen* tutorialscreen = new TutorialScreen(this, ui->stackedWidget);
     SettingsScreen* settingsscreen = new SettingsScreen(this, ui->stackedWidget);

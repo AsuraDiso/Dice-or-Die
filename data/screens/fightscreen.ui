@@ -272,17 +272,30 @@
     <string>Next Turn</string>
    </property>
   </widget>
+  <widget class="Button" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>410</y>
+     <width>80</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PushButton</string>
+   </property>
+  </widget>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>Button</class>
-   <extends>QPushButton</extends>
-   <header>data/widgets/button.h</header>
-  </customwidget>
   <customwidget>
    <class>TextImage</class>
    <extends>QLabel</extends>
    <header>data/widgets/textimage.h</header>
+  </customwidget>
+  <customwidget>
+   <class>Button</class>
+   <extends>QPushButton</extends>
+   <header>data/widgets/button.h</header>
   </customwidget>
   <customwidget>
    <class>ProgressBar</class>
