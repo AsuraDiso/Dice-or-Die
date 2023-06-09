@@ -35,12 +35,12 @@ MapGenerator GameManager::getMap()
 void GameManager::generateNewEnemy(){
 
 }
-Character GameManager::getChar(){
-    return *character;
+Character *GameManager::getChar(){
+    return character;
 }
 
-Enemy GameManager::getEnemy(){
-    return *enemy;
+Enemy *GameManager::getEnemy(){
+    return enemy;
 }
 
 bool GameManager::isNoChar(){

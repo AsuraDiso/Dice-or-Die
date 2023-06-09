@@ -3,6 +3,7 @@
 Entity::Entity()
 {
     diceamount = 2;
+    cardsamount = 3;
     maxhealth = 100;
     currhealth = 75;
     name = "Spider";
@@ -57,4 +58,12 @@ QSize Entity::getSize(){
 
 QPoint Entity::getOffset(){
     return offset;
+}
+
+ActionCard *Entity::getActionCards(){
+    return cards;
+}
+
+int Entity::getActionCardsAmount(){
+    return cardsamount;
 }

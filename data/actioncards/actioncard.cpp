@@ -1,11 +1,30 @@
 #include "actioncard.h"
 #include "ui_actioncard.h"
+#include <QDebug>
+#include "../entity.h" // Include the complete definition of the Entity class
 
 ActionCard::ActionCard(QWidget *parent) :
-    QPushButton(parent),
+    Button(parent),
     ui(new Ui::ActionCard)
 {
     ui->setupUi(this);
+}
+
+void ActionCard::onUse(Entity *target, int val){
+    target->deltaHealth(-val);
+    qDebug() << target->getCurrHealth();
+}
+
+bool ActionCard::canUse(int val){
+    return val < 5;
+}
+
+void ActionCard::setPosition(int x, int y){
+    pt.setX(x); pt.setY(y);
+}
+
+void ActionCard::setScale(int w, int h){
+    scale.setWidth(w); scale.setHeight(h);
 }
 
 ActionCard::~ActionCard()

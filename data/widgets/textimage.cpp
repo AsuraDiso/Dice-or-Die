@@ -1,11 +1,12 @@
 #include "textimage.h"
-#include <QVBoxLayout>
+#include <QPixmap>
 
 TextImage::TextImage(QWidget *parent): QLabel(parent)//, moveable(false)
 {
     moveable = false;
     anim.setParent(parent);
     anim.setMovie(&tex);
+    diceval = -1;
 }
 
 
@@ -70,6 +71,20 @@ void TextImage::setFontSize(int s){
 
 void TextImage::setMoveable(bool s){
     moveable = s;
+}
+
+void TextImage::setDiceVal(int dc){
+    setText(QString::number(dc));
+    setPixmap(QPixmap("://assets/images/dice" + QString::number(dc) + ".png"));
+    diceval = dc;
+}
+
+int TextImage::getDiceVal(){
+    return diceval;
+}
+
+bool TextImage::isDice(){
+    return diceval > 0;
 }
 
 TextImage::~TextImage(){

@@ -3,6 +3,7 @@
 #include <QString>
 #include <QSize>
 #include <QPoint>
+class ActionCard; // Forward declaration
 
 class Entity
 {
@@ -15,6 +16,7 @@ class Entity
         void setTexture(QString tex);
         void setSize(QSize sz);
         void setOffset(QPoint point);
+        void setCards(ActionCard card, int index);
 
         QString getName();
         int getDiceAmount();
@@ -23,12 +25,17 @@ class Entity
         QString getTexture();
         QSize getSize();
         QPoint getOffset();
+        ActionCard *getActionCards();
+        int getActionCardsAmount();
+        ActionCard *getBackPack();
 
     private:
         int diceamount;
         int maxhealth;
         int currhealth;
-        QString *cards;
+        int cardsamount;
+        ActionCard *cards;
+        ActionCard *backpack;
         QString name;
         QString texture;
         QSize size;

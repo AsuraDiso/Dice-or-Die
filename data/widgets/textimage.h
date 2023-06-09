@@ -15,6 +15,9 @@ public:
     void resize(double width, double height);
     void setPosition(int x, int y);
     void setScale(int w, int h);
+    void setDiceVal(int dc);
+    int getDiceVal();
+    bool isDice();
     void setFontSize(int s);
     void setMoveable(bool s);
     void setAnimatedTexture(QString filename);
@@ -32,6 +35,7 @@ private:
     int lastMousePos[2]; //for some reason i can't add new QPoint
     QMovie tex;
     QLabel anim;
+    int diceval;
 };
 
 #endif // TEXTIMAGE_H

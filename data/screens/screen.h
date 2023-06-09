@@ -14,6 +14,8 @@
 #include "../widgets/scrollarea.h"
 #include "../widgets/textimage.h"
 #include "../widgets/progressbar.h"
+#include "../widgets/textedit.h"
+#include "../actioncards/actioncard.h"
 
 namespace Ui {
 class Screen;

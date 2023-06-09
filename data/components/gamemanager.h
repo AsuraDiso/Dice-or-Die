@@ -27,8 +27,8 @@ public:
     static QString getLevelName();
     static QString getCharName();
     static QString getCharTexture();
-    static Character getChar();
-    static Enemy getEnemy();
+    static Character *getChar();
+    static Enemy *getEnemy();
     static bool isNoChar();
     static int getBossLevel();
     static int getCurrentHealth();
