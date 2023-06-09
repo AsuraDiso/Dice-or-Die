@@ -20,5 +20,6 @@
         <file>assets/images/tutorial/knight.png</file>
         <file>assets/images/tutorial/archer.png</file>
         <file>assets/images/tutorial/witch.png</file>
+        <file>assets/images/diceburn.png</file>
     </qresource>
 </RCC>

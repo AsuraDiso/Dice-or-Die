@@ -164,7 +164,6 @@ void MapGenerator::generateMaze(int r, int c, int a, coords P0, coords Pf)
     int ac = 0;
     int cm = a/2;
     bool shouldspawnshop = (rand() % 3 < 1);
-    qDebug() << shouldspawnshop;
     bool spawnedshop = false;
     int attempts = 0;
     while ((am < a or ac < cm or (shouldspawnshop and not spawnedshop)) and (attempts < ROWS*COLS*2)) {

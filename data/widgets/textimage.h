@@ -16,7 +16,9 @@ public:
     void setPosition(int x, int y);
     void setScale(int w, int h);
     void setDiceVal(int dc);
+    void setBurn(bool);
     int getDiceVal();
+    bool isBurn();
     bool isDice();
     void setFontSize(int s);
     void setMoveable(bool s);
@@ -35,7 +37,9 @@ private:
     int lastMousePos[2]; //for some reason i can't add new QPoint
     QMovie tex;
     QLabel anim;
+    QLabel burneffect;
     int diceval;
+    bool isburn;
 };
 
 #endif // TEXTIMAGE_H

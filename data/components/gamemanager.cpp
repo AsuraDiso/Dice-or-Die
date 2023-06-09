@@ -33,7 +33,7 @@ MapGenerator GameManager::getMap()
 }
 
 void GameManager::generateNewEnemy(){
-
+    setEnemy(new Spider());
 }
 
 void GameManager::startNewGame(){
@@ -88,6 +88,7 @@ void GameManager::playerMoved(int val, QStackedWidget *stacked){
         leveldepth = QString::number(leveldepth.toInt() + 1);
         generateNewLevel();
     } else if (val == 4){
+        generateNewEnemy();
         stacked->setCurrentIndex(6);
     } else if (val == 5){
         stacked->setCurrentIndex(6);

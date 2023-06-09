@@ -10,6 +10,9 @@ CONFIG += c++17
 
 SOURCES += \
     data/actioncards/actioncard.cpp \
+    data/actioncards/bandage.cpp \
+    data/actioncards/shield.cpp \
+    data/actioncards/sword.cpp \
     data/chars/archer.cpp \
     data/chars/character.cpp \
     data/chars/knight.cpp \
@@ -44,6 +47,9 @@ SOURCES += \
 
 HEADERS += \
     data/actioncards/actioncard.h \
+    data/actioncards/bandage.h \
+    data/actioncards/shield.h \
+    data/actioncards/sword.h \
     data/chars/archer.h \
     data/chars/character.h \
     data/chars/knight.h \
@@ -77,6 +83,9 @@ HEADERS += \
 
 FORMS += \
     data/actioncards/actioncard.ui \
+    data/actioncards/bandage.ui \
+    data/actioncards/shield.ui \
+    data/actioncards/sword.ui \
     data/screens/bossfightscreen.ui \
     data/screens/characterchoosescreen.ui \
     data/screens/creditsscreen.ui \

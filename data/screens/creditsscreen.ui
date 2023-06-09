@@ -456,15 +456,15 @@
    <header>data/widgets/textimage.h</header>
   </customwidget>
   <customwidget>
+   <class>Button</class>
+   <extends>QPushButton</extends>
+   <header>data/widgets/button.h</header>
+  </customwidget>
+  <customwidget>
    <class>Widget</class>
    <extends>QWidget</extends>
    <header>data/widgets/widget.h</header>
    <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>Button</class>
-   <extends>QPushButton</extends>
-   <header>data/widgets/button.h</header>
   </customwidget>
   <customwidget>
    <class>ScrollArea</class>

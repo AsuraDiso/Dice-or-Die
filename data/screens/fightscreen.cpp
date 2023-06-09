@@ -29,6 +29,15 @@ FightScreen::FightScreen(QWidget *parent, QStackedWidget *stackwidg) :
                 if (dice && dice->isDice() && card && card->canUse(dice->getDiceVal()) && areWidgetsClose(dice, card, -50)) {
                     Entity *caster = GameManager::getChar();
                     Entity *enemy = GameManager::getEnemy();
+                    if (caster->getCorruption() >=1 and caster->getCorruption() <= 5){
+                        if (rand()%10 < caster->getCorruption()){
+                            caster->setCorruption(-rand()%3+1);
+                        }
+                    }
+
+                    if (dice->isBurn()){
+                        caster->deltaHealth(-2);
+                    }
                     card->onUse(caster, enemy, dice->getDiceVal());
                     delete dice;
                     sizeInit();
@@ -55,6 +64,9 @@ void FightScreen::sizeInit()
     ui->enemy_hp->setMaximum(GameManager::getEnemy()->getMaxHealth());
     ui->char_dices->setText(QString::number(GameManager::getChar()->getDiceAmount()) + "x");
     ui->enemy_dices->setText(QString::number(GameManager::getEnemy()->getDiceAmount()) + "x");
+    if (GameManager::getEnemy()->getCurrHealth() <= 0){
+        stackwidget->setCurrentIndex(5);
+    }
     for (ActionCard* card : this->findChildren<ActionCard*>()) {
         card->raise();
     }
@@ -90,7 +102,7 @@ void FightScreen::on_nextturn_clicked()
         card->raise();
     }
 
-    for (int i = 0; i < GameManager::getChar()->getDiceAmount(); i++) {
+    for (int i = 0; i < GameManager::getChar()->getDiceAmount(); i++) {      
         TextImage* dice = new TextImage(this);
         dice->setMoveable(true);
         dice->setDiceVal(GameManager::generateDice(false));
@@ -101,11 +113,28 @@ void FightScreen::on_nextturn_clicked()
             j++;
         dice->show();
         dice->raise();
+        if (GameManager::getChar()->getBlindness() > 0){
+            dice->setPixmap(QPixmap("://assets/images/icon.png"));
+            GameManager::getChar()->setBlindness(-1);
+        }
+        if (GameManager::getChar()->getBurn() > 0){
+            dice->setBurn(true);
+            GameManager::getChar()->setBurn(-1);
+        }
     }
 
     timer->setInterval(100);
 
-
+    qDebug() << GameManager::getChar()->getPoison();
+    if (GameManager::getChar()->getPoison() > 0){
+        GameManager::getChar()->setHealth(GameManager::getChar()->getCurrHealth()-GameManager::getChar()->getPoison(), GameManager::getChar()->getMaxHealth());
+        GameManager::getChar()->setPoison(-1);
+    }
+    if (GameManager::getEnemy()->getPoison() > 0){
+        GameManager::getEnemy()->setHealth(GameManager::getEnemy()->getCurrHealth()-GameManager::getEnemy()->getPoison(), GameManager::getEnemy()->getMaxHealth());
+        GameManager::getEnemy()->setPoison(-1);
+    }
+    sizeInit();
     // Start the timer
     timer->start();
 }

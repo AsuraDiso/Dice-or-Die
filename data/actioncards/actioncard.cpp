@@ -1,7 +1,7 @@
 #include "actioncard.h"
 #include "ui_actioncard.h"
 #include <QDebug>
-#include "../entity.h" // Include the complete definition of the Entity class
+#include "../entity.h"
 
 ActionCard::ActionCard(QWidget *parent) :
     Button(parent),

@@ -18,6 +18,22 @@ class Entity
         void setOffset(QPoint point);
         void setCards(ActionCard card, int index);
 
+        void setShield(int val);
+        void setCorruption(int val);
+        void setPoison(int val);
+        void setBurn(int val);
+        void setReflect(int val);
+        void setBlindness(int val);
+        void setRage(int val);
+
+        int getShield();
+        int getCorruption();
+        int getPoison();
+        int getBurn();
+        int getReflect();
+        int getBlindness();
+        int getRage();
+
         QString getName();
         int getDiceAmount();
         int getMaxHealth();
@@ -34,6 +50,15 @@ class Entity
         int maxhealth;
         int currhealth;
         int cardsamount;
+
+        int shield;
+        int corruption;
+        int poison;
+        int burn;
+        int reflect;
+        int blindness;
+        int rage;
+
         ActionCard *cards;
         ActionCard *backpack;
         QString name;
@@ -41,5 +66,6 @@ class Entity
         QSize size;
         QPoint offset;
 };
+
 
 #endif // ENTITY_H

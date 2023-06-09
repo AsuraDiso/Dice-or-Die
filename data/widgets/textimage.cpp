@@ -4,6 +4,12 @@
 TextImage::TextImage(QWidget *parent): QLabel(parent)//, moveable(false)
 {
     moveable = false;
+    burneffect.setScaledContents(true);
+    burneffect.setParent(parent);
+    burneffect.setPixmap(QPixmap("://assets/images/diceburn.png"));
+    burneffect.hide();
+    burneffect.setParent(this);
+    anim.setScaledContents(true);
     anim.setParent(parent);
     anim.setMovie(&tex);
     diceval = -1;
@@ -29,9 +35,10 @@ void TextImage::resize(double width, double height){
     double deltaSize = qMin(width / desiredSize.width(), height / desiredSize.height());
     move(pt.x() * deltaSize, pt.y() * deltaSize);
     setFixedSize(scale.width() * deltaSize, scale.height() * deltaSize);
-    anim.setScaledContents(true);
     anim.setFixedSize(scale.width() * deltaSize, scale.height() * deltaSize);
     anim.move(pt.x() * deltaSize, pt.y() * deltaSize);
+    burneffect.setFixedSize(50 * deltaSize, 50 * deltaSize);
+    burneffect.move(0 * deltaSize, 0 * deltaSize);
     QFont newFont = font();
     newFont.setPointSize(fontSize * deltaSize);
     setFont(newFont);
@@ -81,6 +88,19 @@ void TextImage::setDiceVal(int dc){
 
 int TextImage::getDiceVal(){
     return diceval;
+}
+
+void TextImage::setBurn(bool val){
+    isburn = val;
+    if (val){
+        burneffect.show();
+    } else {
+        burneffect.hide();
+    }
+}
+
+bool TextImage::isBurn(){
+    return isburn;
 }
 
 bool TextImage::isDice(){
