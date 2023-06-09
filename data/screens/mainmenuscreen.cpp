@@ -35,10 +35,8 @@ void MainMenuScreen::on_exit_clicked()
 void MainMenuScreen::on_start_clicked()
 {
     if (GameManager::getMap().getSize().width() == 0){
-        GameManager::generateNewLevel();
-    }
-    if (GameManager::isNoChar()){
         stackwidget->setCurrentIndex(4);
+        GameManager::generateNewLevel();
     } else {
         stackwidget->setCurrentIndex(5);
     }

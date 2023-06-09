@@ -35,6 +35,22 @@ MapGenerator GameManager::getMap()
 void GameManager::generateNewEnemy(){
 
 }
+
+void GameManager::startNewGame(){
+    leveldepth = "1";
+    coins = 0;
+    levelname = "Forest";
+    GameManager::getMap().clearMap();
+}
+
+void GameManager::EntitiesUpdate(){
+    if (character->getCurrHealth() <= 0) {
+        startNewGame();
+    } else if (enemy->getCurrHealth() <= 0){
+        qDebug() << "ENEMY DIED";
+    }
+}
+
 Character *GameManager::getChar(){
     return character;
 }
@@ -44,7 +60,7 @@ Enemy *GameManager::getEnemy(){
 }
 
 bool GameManager::isNoChar(){
-    return character == nullptr;
+    return (character == nullptr || dynamic_cast<Character*>(character) == nullptr);
 }
 QString GameManager::getLevelDepth(){
     return leveldepth;
@@ -80,7 +96,6 @@ void GameManager::playerMoved(int val, QStackedWidget *stacked){
     }
 }
 void GameManager::setCharacter(QString charc){
-    delete character;
     if (charc == "Knight"){
         character = new Knight();
     } else if (charc == "Archer"){

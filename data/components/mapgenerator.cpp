@@ -56,6 +56,19 @@ int MapGenerator::getValueInPoint(int r, int c)
     return maze[r][c];
 }
 
+void MapGenerator::clearMap()
+{
+    if (maze != nullptr) {
+        for (int i = 0; i < size.width(); i++) {
+            delete[] maze[i];
+        }
+        delete[] maze;
+    }
+
+    size = QSize(0, 0);
+    maze = nullptr;
+}
+
 void MapGenerator::generateMaze(int r, int c, int a, coords P0, coords Pf)
 {
     size.setHeight(c);
