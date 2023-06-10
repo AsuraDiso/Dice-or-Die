@@ -13,7 +13,7 @@ Entity::Entity()
     corruption = 0;
     poison = 0;
     burn = 0;
-    reflect = 5;
+    reflect = 2;
     blindness = 0;
     rage = 0;
 
