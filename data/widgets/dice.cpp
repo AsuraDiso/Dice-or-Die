@@ -1,7 +1,7 @@
-#include "textimage.h"
+#include "dice.h"
 #include <QPixmap>
 
-TextImage::TextImage(QWidget *parent): QLabel(parent)//, moveable(false)
+Dice::Dice(QWidget *parent): QLabel(parent)//, moveable(false)
 {
     moveable = false;
     burneffect.setScaledContents(true);
@@ -13,9 +13,10 @@ TextImage::TextImage(QWidget *parent): QLabel(parent)//, moveable(false)
     anim.setParent(parent);
     anim.setMovie(&tex);
     diceval = -1;
+    isburn = false;
 }
 
-void TextImage::setAnimatedTexture(QString filename){
+void Dice::setAnimatedTexture(QString filename){
     if (tex.fileName() == filename){
         return;
     }
@@ -24,11 +25,11 @@ void TextImage::setAnimatedTexture(QString filename){
     clear();
 }
 
-void TextImage::setOffset(QPoint point){
+void Dice::setOffset(QPoint point){
     offset = point;
 }
 
-void TextImage::resize(double width, double height){
+void Dice::resize(double width, double height){
     if (pt.isNull()){
         setPosition(pos().x(), pos().y());
         scale = size();
@@ -49,16 +50,17 @@ void TextImage::resize(double width, double height){
     setFont(newFont);
 }
 
-void TextImage::mousePressEvent(QMouseEvent* event)
+void Dice::mousePressEvent(QMouseEvent* event)
 {
     if (event->button() == Qt::LeftButton && moveable)
     {
         lastMousePos[0] = event->pos().x();
         lastMousePos[1] = event->pos().y();
+        ismoving = true;
     }
 }
 
-void TextImage::mouseMoveEvent(QMouseEvent* event)
+void Dice::mouseMoveEvent(QMouseEvent* event)
 {
     if (event->buttons() & Qt::LeftButton && moveable)
     {
@@ -66,39 +68,48 @@ void TextImage::mouseMoveEvent(QMouseEvent* event)
 
         QPoint newTopLeft = pos() + delta;
         move(newTopLeft);
+        ismoving = true;
     }
 }
 
-void TextImage::setPosition(int x, int y){
+void Dice::mouseReleaseEvent(QMouseEvent* event)
+{
+    if (event->button() == Qt::LeftButton)
+    {
+        ismoving = false;  // Set the ismoving variable to false when the dice movement is completed
+    }
+}
+
+void Dice::setPosition(int x, int y){
     pt.setX(x); pt.setY(y);
 }
 
-void TextImage::setScale(int w, int h){
+void Dice::setScale(int w, int h){
     scale.setWidth(w); scale.setHeight(h);
 }
 
-void TextImage::setFontSize(int s){
+void Dice::setFontSize(int s){
     fontSize = s;
 }
 
-void TextImage::setMoveable(bool s){
+void Dice::setMoveable(bool s){
     moveable = s;
 }
 
-void TextImage::setDiceVal(int dc){
+void Dice::setDiceVal(int dc){
     setText(QString::number(dc));
     setPixmap(QPixmap("://assets/images/dice" + QString::number(dc) + ".png"));
     diceval = dc;
 }
 
-int TextImage::getDiceVal(){
+int Dice::getDiceVal(){
     return diceval;
 }
-QPoint TextImage::getPos(){
+QPoint Dice::getPos(){
     return pt;
 }
 
-void TextImage::setBurn(bool val){
+void Dice::setBurn(bool val){
     isburn = val;
     if (val){
         burneffect.show();
@@ -107,13 +118,17 @@ void TextImage::setBurn(bool val){
     }
 }
 
-bool TextImage::isBurn(){
+bool Dice::isBurn(){
     return isburn;
 }
 
-bool TextImage::isDice(){
+bool Dice::isDice(){
     return diceval > 0;
 }
 
-TextImage::~TextImage(){
+bool Dice::isMoving(){
+    return ismoving;
+}
+
+Dice::~Dice(){
 }

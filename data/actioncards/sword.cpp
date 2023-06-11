@@ -7,9 +7,11 @@ Sword::Sword(QWidget *parent) :
     ui(new Ui::Sword)
 {
     ui->setupUi(this);
+    name.setText("Sword");
 }
 
 void Sword::onUse(Entity *caster, Entity *target, int val){
+    ActionCard::onUse(caster, target, val);
     target->deltaHealth(-val, caster);
 }
 

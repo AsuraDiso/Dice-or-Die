@@ -8,6 +8,7 @@
 #include <QMediaPlayer>
 #include <QAudioOutput>
 #include <QStackedWidget>
+#include <QVBoxLayout>
 
 class GameManager
 {
@@ -37,6 +38,8 @@ public:
     static int getMaxHealth();
     static int getCoins();
     static int generateDice(bool isenemy);
+    static void setOverlay(QStackedWidget *overlay);
+    static void setOverlayScreen(QString page);
 
 private:
     static GameManager *instance;
@@ -47,6 +50,7 @@ private:
     static Enemy *enemy;
     static int coins;
     static int bosslevel;
+    static QStackedWidget *overlay;
     //QString charinventory[6];
     //static EnemyData enemydata;
 };

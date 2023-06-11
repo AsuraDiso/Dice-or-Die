@@ -21,5 +21,6 @@
         <file>assets/images/tutorial/archer.png</file>
         <file>assets/images/tutorial/witch.png</file>
         <file>assets/images/diceburn.png</file>
+        <file>assets/music/PESTERQUEST - Rose's Theme.mp3</file>
     </qresource>
 </RCC>

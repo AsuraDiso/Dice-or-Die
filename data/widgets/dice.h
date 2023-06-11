@@ -1,17 +1,17 @@
-#ifndef TEXTIMAGE_H
-#define TEXTIMAGE_H
+#ifndef DICE_H
+#define DICE_H
 
 #include <QWidget>
 #include <QLabel>
 #include <QMouseEvent>
 #include <QMovie>
 
-class TextImage : public QLabel
+class Dice : public QLabel
 {
     Q_OBJECT
 
 public:
-    explicit TextImage(QWidget *parent = nullptr);
+    explicit Dice(QWidget *parent = nullptr);
     void resize(double width, double height);
     void setPosition(int x, int y);
     void setScale(int w, int h);
@@ -21,15 +21,17 @@ public:
     QPoint getPos();
     bool isBurn();
     bool isDice();
+    bool isMoving();
     void setFontSize(int s);
     void setMoveable(bool s);
     void setAnimatedTexture(QString filename);
     void setOffset(QPoint point);
-    ~TextImage();
+    ~Dice();
 
 protected:
     void mousePressEvent(QMouseEvent* event) override;
     void mouseMoveEvent(QMouseEvent* event) override;
+    void mouseReleaseEvent(QMouseEvent* event) override;
 
 private:
     QPoint pt;
@@ -37,6 +39,7 @@ private:
     QSize scale;
     int fontSize;
     bool moveable;
+    bool ismoving;
     int lastMousePos[2]; //for some reason i can't add new QPoint
     QMovie tex;
     QLabel anim;
@@ -45,4 +48,4 @@ private:
     bool isburn;
 };
 
-#endif // TEXTIMAGE_H
+#endif // DICE_H

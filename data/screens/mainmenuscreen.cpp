@@ -17,7 +17,7 @@ MainMenuScreen::MainMenuScreen(QWidget *parent, QStackedWidget *stackwidg) :
     ui->setupUi(this);
 
     setBackGroundImage(":/assets/images/background.png");
-    MusicManager::play("/assets/music/omori_trees.mp3");
+    MusicManager::play("/assets/music/PESTERQUEST - Rose's Theme.mp3");
 }
 
 void MainMenuScreen::resizeScreen(QResizeEvent *event)

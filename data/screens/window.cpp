@@ -9,10 +9,12 @@
 #include "mapscreen.h"
 #include "creditsscreen.h"
 #include "settingsscreen.h"
+#include "shopscreen.h"
+#include "deathscreen.h"
 #include "tutorialscreen.h"
 #include <QResizeEvent>
 #include <QDebug>
-
+#include "../components/gamemanager.h"
 
 Window::Window(QWidget *parent)
     : QMainWindow(parent)
@@ -36,12 +38,21 @@ Window::Window(QWidget *parent)
     ui->stackedWidget->addWidget(fightscreen);
     ui->stackedWidget->addWidget(bossfightscreen);
     ui->stackedWidget->setCurrentWidget(mainscreen); //mainscreen
+    DeathScreen* deathscreen = new DeathScreen(this, ui->overlays);
+    ui->overlays->setStyleSheet("background-color: none !important;");
+    ui->overlays->addWidget(deathscreen);
+    ui->overlays->setCurrentWidget(deathscreen);
+    ui->overlays->parentWidget()->hide();
+    GameManager::setOverlay(ui->overlays);
 }
 
 void Window::resizeEvent(QResizeEvent *event)
 {
     QWidget::resizeEvent(event);
     if (Screen *widget = (Screen*)(ui->stackedWidget->currentWidget())) {
+        widget->resizeScreen(event);
+    }
+    if (Screen *widget = (Screen*)(ui->overlays->currentWidget())) {
         widget->resizeScreen(event);
     }
 }

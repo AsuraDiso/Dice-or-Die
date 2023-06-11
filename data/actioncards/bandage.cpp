@@ -7,9 +7,11 @@ Bandage::Bandage(QWidget *parent) :
     ui(new Ui::Bandage)
 {
     ui->setupUi(this);
+    name.setText("Bandage");
 }
 
 void Bandage::onUse(Entity *caster, Entity *target, int val){
+    ActionCard::onUse(caster, target, val);
     caster->deltaHealth(val, target);
 }
 

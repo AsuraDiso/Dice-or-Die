@@ -16,6 +16,7 @@ public:
     explicit FightScreen(QWidget *parent = nullptr, QStackedWidget *stacked = nullptr);
     void resizeScreen(QResizeEvent *event) override;
     void sizeInit();
+    void startFight();
     void updateEntitiesTextures();
     ~FightScreen();
 
@@ -26,6 +27,7 @@ private slots:
 
 private:
     Ui::FightScreen *ui;
+    bool wasplayer;
 };
 
 #endif // FIGHTSCREEN_H

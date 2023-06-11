@@ -4,16 +4,17 @@
 Entity::Entity()
 {
     diceamount = 2;
-    cardsamount = 3;
+    cardsamount = 0;
     maxhealth = 24;
     currhealth = 24;
     name = "Spider";
+    cards = new QString[1];
 
     shield = 0;
     corruption = 0;
     poison = 0;
     burn = 0;
-    reflect = 2;
+    reflect = 0;
     blindness = 0;
     rage = 0;
 
@@ -26,26 +27,31 @@ void Entity::setHealth(int cur, int maxi){
     maxhealth = maxi;
 }
 
-void Entity::deltaHealth(int delta, Entity* entity){
-    int dlt = 0;
-    if (delta < 0){
-        dlt = shield + reflect + delta;
-        if (reflect > 0){
-            entity->setHealth(entity->getCurrHealth()-reflect, entity->getMaxHealth());
-            reflect -= rand()%3+1;
-            if (reflect < 0){reflect = 0;}
-        }
-        if (dlt < 0){
-            currhealth += dlt;
+void Entity::deltaHealth(int delta, Entity* entity) {
+    if (delta < 0) {
+        if (delta > -shield) {
+            shield += delta;
         } else {
-            shield = dlt;
+            currhealth += delta + shield;
+            shield = 0;
         }
     } else {
         currhealth += delta;
     }
     GameManager::EntitiesUpdate();
 }
+void Entity::setCardAmount(int val){
+    cardsamount = val;
+    delete []cards;
+    cards = new QString[val];
+}
 
+void Entity::setCard(QString card, int index){
+    if (index > cardsamount-1){
+        return;
+    }
+    cards[index]=card;
+}
 void Entity::setDiceAmount(int amount){
     diceamount = amount;
 }
@@ -147,7 +153,7 @@ QPoint Entity::getOffset(){
     return offset;
 }
 
-ActionCard *Entity::getActionCards(){
+QString *Entity::getActionCards(){
     return cards;
 }
 

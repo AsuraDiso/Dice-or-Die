@@ -16,6 +16,7 @@
 #include "../widgets/progressbar.h"
 #include "../actioncards/actioncard.h"
 #include "../widgets/slider.h"
+#include "../widgets/dice.h"
 #include "../widgets/checkbox.h"
 
 namespace Ui {

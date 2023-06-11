@@ -14,6 +14,7 @@ QString GameManager::levelname = "Forest";
 QString GameManager::leveldepth = "1";
 Character *GameManager::character = nullptr;
 Enemy *GameManager::enemy = nullptr;
+QStackedWidget *GameManager::overlay = nullptr;
 
 GameManager::GameManager()
 {
@@ -82,6 +83,20 @@ int GameManager::getBossLevel(){
 int GameManager::generateDice(bool isplayer){
     int val = rand()%6+1;
     return val;
+}
+
+void GameManager::setOverlay(QStackedWidget *over){
+    overlay = over;
+}
+
+void GameManager::setOverlayScreen(QString page){
+    overlay->parentWidget()->show();
+    if (page == "death"){
+        qDebug() << "DEATH";
+        overlay->setCurrentIndex(0);
+    } else {
+        overlay->parentWidget()->hide();
+    }
 }
 
 void GameManager::playerMoved(int val, QStackedWidget *stacked){

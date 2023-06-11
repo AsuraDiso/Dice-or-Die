@@ -25,14 +25,18 @@ SOURCES += \
     data/entity.cpp \
     data/screens/bossfightscreen.cpp \
     data/screens/characterchoosescreen.cpp \
+    data/screens/chestscreen.cpp \
     data/screens/creditsscreen.cpp \
+    data/screens/deathscreen.cpp \
     data/screens/fightscreen.cpp \
     data/screens/gamescreen.cpp \
     data/screens/mapscreen.cpp \
     data/screens/settingsscreen.cpp \
+    data/screens/shopscreen.cpp \
     data/screens/tutorialscreen.cpp \
     data/widgets/button.cpp \
     data/widgets/checkbox.cpp \
+    data/widgets/dice.cpp \
     data/widgets/progressbar.cpp \
     data/widgets/scrollarea.cpp \
     data/widgets/slider.cpp \
@@ -62,17 +66,21 @@ HEADERS += \
     data/entity.h \
     data/screens/bossfightscreen.h \
     data/screens/characterchoosescreen.h \
+    data/screens/chestscreen.h \
     data/screens/creditsscreen.h \
+    data/screens/deathscreen.h \
     data/screens/fightscreen.h \
     data/screens/gamescreen.h \
     data/screens/mainmenuscreen.h \
     data/screens/mapscreen.h \
     data/screens/screen.h \
     data/screens/settingsscreen.h \
+    data/screens/shopscreen.h \
     data/screens/tutorialscreen.h \
     data/screens/window.h \
     data/widgets/button.h \
     data/widgets/checkbox.h \
+    data/widgets/dice.h \
     data/widgets/progressbar.h \
     data/widgets/scrollarea.h \
     data/widgets/slider.h \
@@ -82,18 +90,17 @@ HEADERS += \
 
 
 FORMS += \
-    data/actioncards/actioncard.ui \
-    data/actioncards/bandage.ui \
-    data/actioncards/shield.ui \
-    data/actioncards/sword.ui \
     data/screens/bossfightscreen.ui \
     data/screens/characterchoosescreen.ui \
+    data/screens/chestscreen.ui \
     data/screens/creditsscreen.ui \
+    data/screens/deathscreen.ui \
     data/screens/fightscreen.ui \
     data/screens/gamescreen.ui \
     data/screens/mainmenuscreen.ui \
     data/screens/mapscreen.ui \
     data/screens/settingsscreen.ui \
+    data/screens/shopscreen.ui \
     data/screens/tutorialscreen.ui \
     data/screens/window.ui
 

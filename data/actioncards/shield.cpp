@@ -7,9 +7,11 @@ Shield::Shield(QWidget *parent) :
     ui(new Ui::Shield)
 {
     ui->setupUi(this);
+    name.setText("Shield");
 }
 
 void Shield::onUse(Entity *caster, Entity *target, int val){
+    ActionCard::onUse(caster, target, val);
     caster->setShield(val);
 }
 

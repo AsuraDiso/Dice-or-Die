@@ -39,14 +39,15 @@ void Screen::updateScale(QResizeEvent *event){
     root.setFixedSize(label_width, label_height);
     parentWidget()->parentWidget()->setGeometry(x, y, label_width, label_height);
     foreach (Widget* widget, this->findChildren<Widget*>()) {widget->resize(label_width, label_height); widget->raise();}
+    foreach (StackedWidget* widget, this->findChildren<StackedWidget*>()) {widget->resize(label_width, label_height); widget->raise();}
     foreach (Button* widget, this->findChildren<Button*>()) {widget->resize(label_width, label_height); widget->raise();}
     foreach (ScrollArea* widget, this->findChildren<ScrollArea*>()) {widget->resize(label_width, label_height); widget->raise();}
     foreach (ProgressBar* widget, this->findChildren<ProgressBar*>()) {widget->resize(label_width, label_height); widget->raise(); widget->doDelta();}
     foreach (TextImage* widget, this->findChildren<TextImage*>()) {widget->resize(label_width, label_height); widget->raise();}
-    foreach (StackedWidget* widget, this->findChildren<StackedWidget*>()) {widget->resize(label_width, label_height); widget->raise();}
     foreach (Slider* widget, this->findChildren<Slider*>()) {widget->resize(label_width, label_height); widget->raise();}
     foreach (CheckBox* widget, this->findChildren<CheckBox*>()) {widget->resize(label_width, label_height); widget->raise();}
     foreach (ActionCard* widget, this->findChildren<ActionCard*>()) {widget->resize(label_width, label_height); widget->raise();}
+    foreach (Dice* widget, this->findChildren<Dice*>()) {widget->resize(label_width, label_height); widget->raise();}
 }
 
 void Screen::setBackGroundImage(QString string)

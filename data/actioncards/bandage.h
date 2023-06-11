@@ -2,6 +2,7 @@
 #define BANDAGE_H
 
 #include <QWidget>
+#include <QLabel>
 #include "actioncard.h"
 
 class Entity;
