@@ -27,8 +27,6 @@ private slots:
 
     void on_charicon_3_clicked();
 
-    void on_backbtn_clicked();
-
 private:
     Ui::CharacterChooseScreen *ui;
 };

@@ -30,6 +30,7 @@ SOURCES += \
     data/screens/deathscreen.cpp \
     data/screens/fightscreen.cpp \
     data/screens/gamescreen.cpp \
+    data/screens/levelupscreen.cpp \
     data/screens/mapscreen.cpp \
     data/screens/settingsscreen.cpp \
     data/screens/shopscreen.cpp \
@@ -71,6 +72,7 @@ HEADERS += \
     data/screens/deathscreen.h \
     data/screens/fightscreen.h \
     data/screens/gamescreen.h \
+    data/screens/levelupscreen.h \
     data/screens/mainmenuscreen.h \
     data/screens/mapscreen.h \
     data/screens/screen.h \
@@ -97,6 +99,7 @@ FORMS += \
     data/screens/deathscreen.ui \
     data/screens/fightscreen.ui \
     data/screens/gamescreen.ui \
+    data/screens/levelupscreen.ui \
     data/screens/mainmenuscreen.ui \
     data/screens/mapscreen.ui \
     data/screens/settingsscreen.ui \

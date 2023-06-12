@@ -1,18 +1,15 @@
 #include "shield.h"
-#include "ui_shield.h"
 #include "../entity.h"
 
 Shield::Shield(QWidget *parent) :
-    ActionCard(parent),
-    ui(new Ui::Shield)
+    ActionCard(parent)
 {
-    ui->setupUi(this);
     name.setText("Shield");
 }
 
-void Shield::onUse(Entity *caster, Entity *target, int val){
-    ActionCard::onUse(caster, target, val);
-    caster->setShield(val);
+void Shield::onUse(Entity *caster, Entity *target){
+    ActionCard::onUse(caster, target);
+    caster->setShield(cardval);
 }
 
 bool Shield::canUse(int val){
@@ -21,5 +18,4 @@ bool Shield::canUse(int val){
 
 Shield::~Shield()
 {
-    delete ui;
 }

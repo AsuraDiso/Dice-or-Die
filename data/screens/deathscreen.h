@@ -18,6 +18,11 @@ public:
     void sizeInit();
     ~DeathScreen();
 
+private slots:
+    void on_retrybtn_clicked();
+
+    void on_mainmenubtn_clicked();
+
 private:
     Ui::DeathScreen *ui;
 };

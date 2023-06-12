@@ -13,19 +13,6 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="Button" name="backbtn">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>400</y>
-     <width>80</width>
-     <height>24</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>&lt;-Back</string>
-   </property>
-  </widget>
   <widget class="TextImage" name="charname">
    <property name="geometry">
     <rect>
@@ -137,14 +124,14 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>Button</class>
-   <extends>QPushButton</extends>
-   <header>data/widgets/button.h</header>
-  </customwidget>
-  <customwidget>
    <class>TextImage</class>
    <extends>QLabel</extends>
    <header>data/widgets/textimage.h</header>
+  </customwidget>
+  <customwidget>
+   <class>Button</class>
+   <extends>QPushButton</extends>
+   <header>data/widgets/button.h</header>
   </customwidget>
  </customwidgets>
  <resources>

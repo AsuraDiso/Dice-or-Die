@@ -1,26 +1,45 @@
 <RCC>
     <qresource prefix="/">
+        <file>assets/music/OMORI - Cram It Wad.mp3</file>
+        <file>assets/music/omori_trees.mp3</file>
+        <file>assets/music/PESTERQUEST - Rose's Theme.mp3</file>
+        <file>assets/images/backgrounds/forest.png</file>
+        <file>assets/images/backgrounds/library.png</file>
+        <file>assets/images/backgrounds/volcano.png</file>
         <file>assets/images/background.png</file>
+        <file>assets/images/coin.png</file>
         <file>assets/images/icon.png</file>
+        <file>assets/images/map.png</file>
         <file>assets/images/static_1080.png</file>
         <file>assets/images/test.png</file>
         <file>assets/images/title.png</file>
+        <file>assets/images/dices/dice1.png</file>
+        <file>assets/images/dices/dice2.png</file>
+        <file>assets/images/dices/dice3.png</file>
+        <file>assets/images/dices/dice4.png</file>
+        <file>assets/images/dices/dice5.png</file>
+        <file>assets/images/dices/dice6.png</file>
+        <file>assets/images/dices/diceburn.png</file>
+        <file>assets/images/dices/diceunknown.png</file>
+        <file>assets/images/dices/less3.png</file>
+        <file>assets/images/dices/less5.png</file>
+        <file>assets/images/dices/more2.png</file>
+        <file>assets/images/dices/more3.png</file>
+        <file>assets/images/dices/only1.png</file>
+        <file>assets/images/dices/only2.png</file>
+        <file>assets/images/dices/onlyeven.png</file>
+        <file>assets/images/dices/onlyodd.png</file>
         <file>assets/images/enemies/ds_spider.gif</file>
-        <file>assets/music/OMORI - Cram It Wad.mp3</file>
-        <file>assets/music/omori_trees.mp3</file>
-        <file>assets/images/map.png</file>
-        <file>assets/images/title.sai2</file>
-        <file>assets/images/dice1.png</file>
-        <file>assets/images/dice2.png</file>
-        <file>assets/images/dice3.png</file>
-        <file>assets/images/dice4.png</file>
-        <file>assets/images/dice5.png</file>
-        <file>assets/images/dice6.png</file>
+        <file>assets/images/status/blindness.png</file>
+        <file>assets/images/status/burn.png</file>
+        <file>assets/images/status/corruption.png</file>
+        <file>assets/images/status/poison.png</file>
+        <file>assets/images/status/rage.png</file>
+        <file>assets/images/status/reflect.png</file>
+        <file>assets/images/status/shield.png</file>
+        <file>assets/images/tutorial/archer.png</file>
         <file>assets/images/tutorial/characters.png</file>
         <file>assets/images/tutorial/knight.png</file>
-        <file>assets/images/tutorial/archer.png</file>
         <file>assets/images/tutorial/witch.png</file>
-        <file>assets/images/diceburn.png</file>
-        <file>assets/music/PESTERQUEST - Rose's Theme.mp3</file>
     </qresource>
 </RCC>

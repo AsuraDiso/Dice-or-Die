@@ -32,11 +32,11 @@ void Entity::deltaHealth(int delta, Entity* entity) {
         if (delta > -shield) {
             shield += delta;
         } else {
-            currhealth += delta + shield;
+            currhealth = qMax(currhealth + delta + shield, 0);
             shield = 0;
         }
     } else {
-        currhealth += delta;
+        currhealth = qMin(currhealth + delta, maxhealth);
     }
     GameManager::EntitiesUpdate();
 }

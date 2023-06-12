@@ -1,8 +1,10 @@
+#include "musicmanager.h"
 #include "gamemanager.h"
 #include "../chars/knight.h"
 #include "../chars/archer.h"
 #include "../chars/witch.h"
 #include "../enemies/spider.h"
+#include "../screens/fightscreen.h"
 #include <QDebug>
 #include <QTimer>
 #include <QObject>
@@ -25,12 +27,23 @@ GameManager::GameManager()
 
 void GameManager::generateNewLevel()
 {
+    QStringList levels = { "Forest", "Volcano", "Library" };
+    levelname = levels[rand()%levels.size()];
     map.generateRandomMaze(leveldepth.toInt()*2+2);
 }
 
 MapGenerator GameManager::getMap()
 {
     return map;
+}
+
+ActionCard* GameManager::getCard(QWidget* parent, const QString& name){
+    if (name == "bandage") {
+        return new Bandage(parent);
+    } else if (name == "sword") {
+        return new Shield(parent);
+    }
+    return new Sword(parent);
 }
 
 void GameManager::generateNewEnemy(){
@@ -92,8 +105,10 @@ void GameManager::setOverlay(QStackedWidget *over){
 void GameManager::setOverlayScreen(QString page){
     overlay->parentWidget()->show();
     if (page == "death"){
-        qDebug() << "DEATH";
         overlay->setCurrentIndex(0);
+        MusicManager::play("/assets/music/omori_trees.mp3");
+    } else if (page == "nextlvl"){
+        overlay->setCurrentIndex(1);
     } else {
         overlay->parentWidget()->hide();
     }
@@ -106,6 +121,10 @@ void GameManager::playerMoved(int val, QStackedWidget *stacked){
     } else if (val == 4){
         generateNewEnemy();
         stacked->setCurrentIndex(6);
+        FightScreen* fightscreen = qobject_cast<FightScreen*>(stacked->currentWidget());
+        if (fightscreen){
+            fightscreen->startFight();
+        }
     } else if (val == 5){
         stacked->setCurrentIndex(6);
     } else if (val == 6){

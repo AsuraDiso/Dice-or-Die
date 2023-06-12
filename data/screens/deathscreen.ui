@@ -16,7 +16,7 @@
   <widget class="TextImage" name="label">
    <property name="geometry">
     <rect>
-     <x>270</x>
+     <x>280</x>
      <y>80</y>
      <width>251</width>
      <height>61</height>
@@ -28,10 +28,36 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">color: white;</string>
    </property>
    <property name="text">
     <string>You are dead</string>
+   </property>
+  </widget>
+  <widget class="Button" name="mainmenubtn">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>270</y>
+     <width>161</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Go to main menu</string>
+   </property>
+  </widget>
+  <widget class="Button" name="retrybtn">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>200</y>
+     <width>161</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Retry</string>
    </property>
   </widget>
  </widget>
@@ -40,6 +66,11 @@
    <class>TextImage</class>
    <extends>QLabel</extends>
    <header>data/widgets/textimage.h</header>
+  </customwidget>
+  <customwidget>
+   <class>Button</class>
+   <extends>QPushButton</extends>
+   <header>data/widgets/button.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

@@ -5,30 +5,31 @@
 #include "../widgets/textimage.h"
 class Entity;
 
-namespace Ui {
-class ActionCard;
-}
-
 class ActionCard : public TextImage
 {
     Q_OBJECT
 
 public:
     explicit ActionCard(QWidget *parent = nullptr);
-    virtual void onUse(Entity *caster, Entity *target, int val);
+    virtual void onUse(Entity *caster, Entity *target);
     virtual bool canUse(int val);
     bool inUse();
+    bool isAttack();
+    void setCardVal(int dc);
+    int getCardVal();
     void setInUse(bool in);
     void setPosition(int x, int y);
     void setScale(int w, int h);
+    void setIsAttack(bool isatk);
     void resize(double width, double height);
-    ~ActionCard();
+    virtual ~ActionCard();
 
 protected:
-    Ui::ActionCard *ui;
     QPoint pt;
     QSize scale;
     bool inuse;
+    bool isattack;
+    int cardval;
     TextImage name;
     TextImage diceimg;
     TextImage desc;

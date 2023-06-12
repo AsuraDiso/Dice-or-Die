@@ -47,13 +47,6 @@ void CharacterChooseScreen::on_charicon_3_clicked()
     startGame();
 }
 
-
-void CharacterChooseScreen::on_backbtn_clicked()
-{
-    stackwidget->setCurrentIndex(0);
-}
-
-
 CharacterChooseScreen::~CharacterChooseScreen()
 {
     delete ui;

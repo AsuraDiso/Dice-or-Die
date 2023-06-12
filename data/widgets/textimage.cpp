@@ -6,7 +6,7 @@ TextImage::TextImage(QWidget *parent): QLabel(parent)//, moveable(false)
     moveable = false;
     burneffect.setScaledContents(true);
     burneffect.setParent(parent);
-    burneffect.setPixmap(QPixmap("://assets/images/diceburn.png"));
+    burneffect.setPixmap(QPixmap("://assets/images/dices/diceburn.png"));
     burneffect.hide();
     burneffect.setParent(this);
     anim.setScaledContents(true);
@@ -87,7 +87,7 @@ void TextImage::setMoveable(bool s){
 
 void TextImage::setDiceVal(int dc){
     setText(QString::number(dc));
-    setPixmap(QPixmap("://assets/images/dice" + QString::number(dc) + ".png"));
+    setPixmap(QPixmap("://assets/images/dices/dice" + QString::number(dc) + ".png"));
     diceval = dc;
 }
 

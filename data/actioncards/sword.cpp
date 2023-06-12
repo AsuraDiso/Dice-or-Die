@@ -1,25 +1,21 @@
 #include "sword.h"
-#include "ui_sword.h"
 #include "../entity.h"
 
 Sword::Sword(QWidget *parent) :
-    ActionCard(parent),
-    ui(new Ui::Sword)
+    ActionCard(parent)
 {
-    ui->setupUi(this);
     name.setText("Sword");
 }
 
-void Sword::onUse(Entity *caster, Entity *target, int val){
-    ActionCard::onUse(caster, target, val);
-    target->deltaHealth(-val, caster);
+void Sword::onUse(Entity *caster, Entity *target){
+    ActionCard::onUse(caster, target);
+    target->deltaHealth(-cardval, caster);
 }
 
 bool Sword::canUse(int val){
-    return val <= 6;
+    return true;
 }
 
 Sword::~Sword()
 {
-    delete ui;
 }

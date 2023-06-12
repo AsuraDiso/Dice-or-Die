@@ -1,20 +1,17 @@
 #include "actioncard.h"
-#include "ui_actioncard.h"
 #include <QDebug>
 #include "../entity.h"
 
 ActionCard::ActionCard(QWidget *parent) :
-    TextImage(parent),
-    ui(new Ui::ActionCard)
+    TextImage(parent)
 {
-    ui->setupUi(this);
-
+    cardval = -1;
     setPixmap(QPixmap("://assets/images/map.png"));
     setScaledContents(true);
 
     diceimg.setParent(this);
     diceimg.show();
-    diceimg.setPixmap(QPixmap("://assets/images/dice1.png"));
+    diceimg.setPixmap(QPixmap("://assets/images/dices/dice1.png"));
     diceimg.setScaledContents(true);
     diceimg.setFixedSize(50, 50);
 
@@ -43,7 +40,7 @@ void ActionCard::resize(double width, double height){
     setFixedSize(scale.width() * deltaSize, scale.height() * deltaSize);
 }
 
-void ActionCard::onUse(Entity *caster, Entity *target, int val){
+void ActionCard::onUse(Entity *caster, Entity *target){
     inuse = true;
 }
 
@@ -53,6 +50,22 @@ bool ActionCard::canUse(int val){
 
 bool ActionCard::inUse(){
     return inuse;
+}
+
+bool ActionCard::isAttack(){
+    return isattack;
+}
+
+void ActionCard::setCardVal(int dc){
+    cardval = dc;
+}
+
+int ActionCard::getCardVal(){
+    return cardval;
+}
+
+void ActionCard::setIsAttack(bool in){
+    isattack = in;
 }
 
 void ActionCard::setInUse(bool in){
@@ -68,5 +81,4 @@ void ActionCard::setScale(int w, int h){
 
 ActionCard::~ActionCard()
 {
-    delete ui;
 }

@@ -5,10 +5,15 @@
 #include "mapgenerator.h"
 #include "../chars/character.h"
 #include "../enemies/enemy.h"
+#include "../actioncards/actioncard.h"
 #include <QMediaPlayer>
 #include <QAudioOutput>
 #include <QStackedWidget>
 #include <QVBoxLayout>
+
+#include "../actioncards/bandage.h"
+#include "../actioncards/sword.h"
+#include "../actioncards/shield.h"
 
 class GameManager
 {
@@ -26,6 +31,7 @@ public:
     static void EntitiesUpdate();
     static void startNewGame();
     static MapGenerator getMap();
+    static ActionCard* getCard(QWidget* parent, const QString& name);
     static QString getLevelDepth();
     static QString getLevelName();
     static QString getCharName();

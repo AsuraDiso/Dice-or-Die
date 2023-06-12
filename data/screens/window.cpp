@@ -10,6 +10,7 @@
 #include "creditsscreen.h"
 #include "settingsscreen.h"
 #include "shopscreen.h"
+#include "levelupscreen.h"
 #include "deathscreen.h"
 #include "tutorialscreen.h"
 #include <QResizeEvent>
@@ -37,10 +38,11 @@ Window::Window(QWidget *parent)
     ui->stackedWidget->addWidget(mapscreen);
     ui->stackedWidget->addWidget(fightscreen);
     ui->stackedWidget->addWidget(bossfightscreen);
-    ui->stackedWidget->setCurrentWidget(mainscreen); //mainscreen
-    DeathScreen* deathscreen = new DeathScreen(this, ui->overlays);
-    ui->overlays->setStyleSheet("background-color: none !important;");
+    ui->stackedWidget->setCurrentWidget(mainscreen);
+    DeathScreen* deathscreen = new DeathScreen(this, ui->stackedWidget);
+    //LevelUpScreen* levelupscreen = new LevelUpScreen(this, ui->stackedWidget);
     ui->overlays->addWidget(deathscreen);
+    //ui->overlays->addWidget(levelupscreen);
     ui->overlays->setCurrentWidget(deathscreen);
     ui->overlays->parentWidget()->hide();
     GameManager::setOverlay(ui->overlays);

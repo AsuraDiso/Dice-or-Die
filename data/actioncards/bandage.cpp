@@ -1,18 +1,15 @@
 #include "bandage.h"
-#include "ui_bandage.h"
 #include "../entity.h"
 
 Bandage::Bandage(QWidget *parent) :
-    ActionCard(parent),
-    ui(new Ui::Bandage)
+    ActionCard(parent)
 {
-    ui->setupUi(this);
     name.setText("Bandage");
 }
 
-void Bandage::onUse(Entity *caster, Entity *target, int val){
-    ActionCard::onUse(caster, target, val);
-    caster->deltaHealth(val, target);
+void Bandage::onUse(Entity *caster, Entity *target){
+    ActionCard::onUse(caster, target);
+    caster->deltaHealth(cardval, target);
 }
 
 bool Bandage::canUse(int val){
@@ -21,5 +18,4 @@ bool Bandage::canUse(int val){
 
 Bandage::~Bandage()
 {
-    delete ui;
 }

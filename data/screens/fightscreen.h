@@ -17,13 +17,13 @@ public:
     void resizeScreen(QResizeEvent *event) override;
     void sizeInit();
     void startFight();
+    void stopFight();
     void updateEntitiesTextures();
+    void playAnimation(QWidget *widget, bool isattack, int val, Entity *caster, Entity *target);
     ~FightScreen();
 
 private slots:
     void on_nextturn_clicked();
-
-    void on_pushButton_clicked();
 
 private:
     Ui::FightScreen *ui;

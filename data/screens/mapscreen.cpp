@@ -34,7 +34,6 @@ void MapScreen::sizeInit(){
     }
     int val = 0;
     if (GameManager::getLevelDepth().toInt() >= GameManager::getBossLevel()){
-        on_backbtn_clicked();
         return;
     }
     for (int i = 0; i < GameManager::getMap().getSize().width(); i++){
@@ -72,9 +71,3 @@ MapScreen::~MapScreen()
 {
     delete ui;
 }
-
-void MapScreen::on_backbtn_clicked()
-{
-    stackwidget->setCurrentIndex(0);
-}
-
