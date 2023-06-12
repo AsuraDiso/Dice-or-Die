@@ -241,6 +241,23 @@ void FightScreen::updateEntitiesTextures()
     ui->enemy_hp->setMaximum(GameManager::getEnemy()->getMaxHealth());
     ui->char_dices->setText(QString::number(GameManager::getChar()->getDiceAmount()) + "x");
     ui->enemy_dices->setText(QString::number(GameManager::getEnemy()->getDiceAmount()) + "x");
+
+    ui->burn_amount->setText("x"+QString::number(GameManager::getChar()->getBurn()));
+    ui->corruption_amount->setText("x"+QString::number(GameManager::getChar()->getCorruption()));
+    ui->blindness_amount->setText("x"+QString::number(GameManager::getChar()->getBlindness()));
+    ui->reflect_amount->setText("x"+QString::number(GameManager::getChar()->getReflect()));
+    ui->poison_amount->setText("x"+QString::number(GameManager::getChar()->getPoison()));
+    ui->shield_amount->setText("x"+QString::number(GameManager::getChar()->getShield()));
+    ui->rage_amount->setText("x"+QString::number(GameManager::getChar()->getRage()));
+
+
+    ui->burn_amount_2->setText("x"+QString::number(GameManager::getEnemy()->getBurn()));
+    ui->corruption_amount_2->setText("x"+QString::number(GameManager::getEnemy()->getCorruption()));
+    ui->blindness_amount_2->setText("x"+QString::number(GameManager::getEnemy()->getBlindness()));
+    ui->reflect_amount_2->setText("x"+QString::number(GameManager::getEnemy()->getReflect()));
+    ui->poison_amount_2->setText("x"+QString::number(GameManager::getEnemy()->getPoison()));
+    ui->shield_amount_2->setText("x"+QString::number(GameManager::getEnemy()->getShield()));
+    ui->rage_amount_2->setText("x"+QString::number(GameManager::getEnemy()->getRage()));
 }
 void FightScreen::stopFight()
 {
