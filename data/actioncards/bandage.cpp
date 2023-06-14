@@ -5,6 +5,7 @@ Bandage::Bandage(QWidget *parent) :
     ActionCard(parent)
 {
     name.setText("Bandage");
+    setPrice(3);
 }
 
 void Bandage::onUse(Entity *caster, Entity *target){

@@ -10,17 +10,20 @@ TextImage::TextImage(QWidget *parent): QLabel(parent)//, moveable(false)
     burneffect.hide();
     burneffect.setParent(this);
     anim.setScaledContents(true);
-    anim.setParent(parent);
-    anim.setMovie(&tex);
     diceval = -1;
 }
 
-void TextImage::setAnimatedTexture(QString filename){
-    if (tex.fileName() == filename){
+void TextImage::setAnimatedTexture(QString filename)
+{
+    if (anim.movie() && anim.movie()->fileName() == filename) {
         return;
     }
-    tex.setFileName(filename);
-    tex.start();
+    QMovie* newMovie = new QMovie(filename);
+    anim.setMovie(newMovie);
+    newMovie->start();
+
+    anim.setParent(parentWidget());
+    anim.show();
     clear();
 }
 

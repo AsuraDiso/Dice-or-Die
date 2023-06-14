@@ -5,6 +5,9 @@
 #include "../chars/witch.h"
 #include "../enemies/spider.h"
 #include "../screens/fightscreen.h"
+#include "../screens/chestscreen.h"
+#include "../screens/shopscreen.h"
+
 #include <QDebug>
 #include <QTimer>
 #include <QObject>
@@ -17,18 +20,21 @@ QString GameManager::leveldepth = "1";
 Character *GameManager::character = nullptr;
 Enemy *GameManager::enemy = nullptr;
 QStackedWidget *GameManager::overlay = nullptr;
+QString GameManager::shopitems[3] = { "", "", "" };
+
+QStringList cards = { "bandage", "sword", "shield" };
+QStringList enemies = { "spider" };
 
 GameManager::GameManager()
 {
     Q_ASSERT(instance == nullptr);
     instance = this;
-    enemy = new Spider();
 }
-
 void GameManager::generateNewLevel()
 {
     QStringList levels = { "Forest", "Volcano", "Library" };
     levelname = levels[rand()%levels.size()];
+    generateShopItems();
     map.generateRandomMaze(leveldepth.toInt()*2+2);
 }
 
@@ -38,29 +44,47 @@ MapGenerator GameManager::getMap()
 }
 
 ActionCard* GameManager::getCard(QWidget* parent, const QString& name){
-    if (name == "bandage") {
-        return new Bandage(parent);
-    } else if (name == "sword") {
-        return new Shield(parent);
-    }
+    if (name == "bandage") { return new Bandage(parent);}
+    else if (name == "shield") {return new Shield(parent);}
     return new Sword(parent);
 }
 
-void GameManager::generateNewEnemy(){
-    setEnemy(new Spider());
+ActionCard* GameManager::getRandomCard(QWidget* parent){
+    return getCard(parent, cards[rand()%cards.size()]);
 }
 
+Enemy* createEnemy(QString name){
+    return new Spider();
+}
+
+void GameManager::generateNewEnemy(){
+    setEnemy(createEnemy(enemies[rand()%enemies.size()]));
+}
+
+void GameManager::generateShopItems(){
+    for (int i = 0; i < 3; i++){
+        shopitems[i] = cards[rand()%cards.size()];
+    }
+}
+
+void GameManager::setShopItem(int ind, QString name){
+    for (int i = 0; i < 3; i++){
+        shopitems[ind] = name;
+    }
+}
+
+QString* GameManager::getShopItems(){
+    return shopitems;
+}
 void GameManager::startNewGame(){
     leveldepth = "1";
     coins = 0;
-    levelname = "Forest";
     GameManager::getMap().clearMap();
+    generateNewLevel();
 }
 
 void GameManager::EntitiesUpdate(){
-    if (character->getCurrHealth() <= 0) {
-        startNewGame();
-    } else if (enemy->getCurrHealth() <= 0){
+    if (enemy->getCurrHealth() <= 0){
         character->setLevel(character->getLevel(), character->getNextLevel(), character->getExp()+1);
         coins += 1;
     }
@@ -126,9 +150,17 @@ void GameManager::playerMoved(int val, QStackedWidget *stacked){
             fightscreen->startFight();
         }
     } else if (val == 5){
-        stacked->setCurrentIndex(6);
+        stacked->setCurrentIndex(8);
+        ChestScreen* chestscreen = qobject_cast<ChestScreen*>(stacked->currentWidget());
+        if (chestscreen){
+            chestscreen->spawnCard();
+        }
     } else if (val == 6){
-        qDebug() << "shop";
+        stacked->setCurrentIndex(9);
+        ShopScreen* shopscreen = qobject_cast<ShopScreen*>(stacked->currentWidget());
+        if (shopscreen){
+            shopscreen->spawnShopItems();
+        }
     }
 }
 void GameManager::setCharacter(QString charc){

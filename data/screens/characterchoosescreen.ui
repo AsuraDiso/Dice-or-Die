@@ -66,7 +66,7 @@
    </property>
    <property name="icon">
     <iconset resource="../assets.qrc">
-     <normaloff>:/assets/images/tutorial/knight.png</normaloff>:/assets/images/tutorial/knight.png</iconset>
+     <normaloff>:/assets/images/chars/knight.gif</normaloff>:/assets/images/chars/knight.gif</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -89,7 +89,7 @@
    </property>
    <property name="icon">
     <iconset resource="../assets.qrc">
-     <normaloff>:/assets/images/tutorial/archer.png</normaloff>:/assets/images/tutorial/archer.png</iconset>
+     <normaloff>:/assets/images/chars/archer.gif</normaloff>:/assets/images/chars/archer.gif</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -112,7 +112,7 @@
    </property>
    <property name="icon">
     <iconset resource="../assets.qrc">
-     <normaloff>:/assets/images/tutorial/witch.png</normaloff>:/assets/images/tutorial/witch.png</iconset>
+     <normaloff>:/assets/images/chars/witch.gif</normaloff>:/assets/images/chars/witch.gif</iconset>
    </property>
    <property name="iconSize">
     <size>

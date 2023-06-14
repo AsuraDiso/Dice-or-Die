@@ -55,7 +55,10 @@ int MapGenerator::getValueInPoint(int r, int c)
 {
     return maze[r][c];
 }
-
+void MapGenerator::setValueInPoint(int val, int r, int c)
+{
+    maze[r][c] = val;
+}
 void MapGenerator::clearMap()
 {
     if (maze != nullptr) {

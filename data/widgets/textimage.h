@@ -38,7 +38,6 @@ private:
     int fontSize;
     bool moveable;
     int lastMousePos[2]; //for some reason i can't add new QPoint
-    QMovie tex;
     QLabel anim;
     QLabel burneffect;
     int diceval;

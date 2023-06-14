@@ -20,6 +20,8 @@ public:
 
 private slots:
 
+    void on_backpackbtn_clicked();
+
 private:
     Ui::MapScreen *ui;
 };

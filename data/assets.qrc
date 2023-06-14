@@ -41,5 +41,22 @@
         <file>assets/images/tutorial/characters.png</file>
         <file>assets/images/tutorial/knight.png</file>
         <file>assets/images/tutorial/witch.png</file>
+        <file>assets/images/chars/witch.gif</file>
+        <file>assets/images/chars/knight.gif</file>
+        <file>assets/images/chars/archer.gif</file>
+        <file>assets/images/enemies/bat.gif</file>
+        <file>assets/images/enemies/crab.gif</file>
+        <file>assets/images/enemies/fox.gif</file>
+        <file>assets/images/enemies/magma.gif</file>
+        <file>assets/images/enemies/slime.gif</file>
+        <file>assets/images/chest/chest_back.png</file>
+        <file>assets/images/chest/chest_front.png</file>
+        <file>assets/images/path/chest.png</file>
+        <file>assets/images/path/enemy.png</file>
+        <file>assets/images/path/exit.png</file>
+        <file>assets/images/path/path.png</file>
+        <file>assets/images/path/pathtaken.png</file>
+        <file>assets/images/path/shop.png</file>
+        <file>assets/images/backgrounds/shop.png</file>
     </qresource>
 </RCC>

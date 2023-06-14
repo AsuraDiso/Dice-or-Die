@@ -16,9 +16,12 @@ public:
     explicit ShopScreen(QWidget *parent = nullptr, QStackedWidget *stacked = nullptr);
     void resizeScreen(QResizeEvent *event) override;
     void sizeInit();
+    void spawnShopItems();
     ~ShopScreen();
 
 private slots:
+
+    void on_backbtn_clicked();
 
 private:
     Ui::ShopScreen *ui;

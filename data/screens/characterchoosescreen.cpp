@@ -21,7 +21,6 @@ void CharacterChooseScreen::sizeInit(){
 
 }
 
-
 void CharacterChooseScreen::startGame()
 {
     stackwidget->setCurrentIndex(5);

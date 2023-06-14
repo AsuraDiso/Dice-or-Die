@@ -5,6 +5,7 @@ Shield::Shield(QWidget *parent) :
     ActionCard(parent)
 {
     name.setText("Shield");
+    setPrice(4);
 }
 
 void Shield::onUse(Entity *caster, Entity *target){

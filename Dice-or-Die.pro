@@ -23,6 +23,7 @@ SOURCES += \
     data/enemies/enemy.cpp \
     data/enemies/spider.cpp \
     data/entity.cpp \
+    data/screens/backpackscreen.cpp \
     data/screens/bossfightscreen.cpp \
     data/screens/characterchoosescreen.cpp \
     data/screens/chestscreen.cpp \
@@ -65,6 +66,7 @@ HEADERS += \
     data/enemies/enemy.h \
     data/enemies/spider.h \
     data/entity.h \
+    data/screens/backpackscreen.h \
     data/screens/bossfightscreen.h \
     data/screens/characterchoosescreen.h \
     data/screens/chestscreen.h \
@@ -92,6 +94,7 @@ HEADERS += \
 
 
 FORMS += \
+    data/screens/backpackscreen.ui \
     data/screens/bossfightscreen.ui \
     data/screens/characterchoosescreen.ui \
     data/screens/chestscreen.ui \

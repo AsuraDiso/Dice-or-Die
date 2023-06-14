@@ -13,7 +13,103 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <widget class="TextImage" name="chest_back">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>100</y>
+     <width>381</width>
+     <height>421</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="../assets.qrc">:/assets/images/chest/chest_back.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="TextImage" name="chest_front">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>172</y>
+     <width>381</width>
+     <height>271</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="../assets.qrc">:/assets/images/chest/chest_front.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="Button" name="take">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>200</y>
+     <width>80</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Take</string>
+   </property>
+  </widget>
+  <widget class="Button" name="throw_2">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>200</y>
+     <width>80</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Throw</string>
+   </property>
+  </widget>
+  <widget class="TextImage" name="label">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>-20</y>
+     <width>321</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>22</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>YOU GOT NEW CARD!</string>
+   </property>
+  </widget>
  </widget>
- <resources/>
+ <customwidgets>
+  <customwidget>
+   <class>TextImage</class>
+   <extends>QLabel</extends>
+   <header>data/widgets/textimage.h</header>
+  </customwidget>
+  <customwidget>
+   <class>Button</class>
+   <extends>QPushButton</extends>
+   <header>data/widgets/button.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../assets.qrc"/>
+ </resources>
  <connections/>
 </ui>

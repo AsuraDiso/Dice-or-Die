@@ -63,9 +63,11 @@ void ActionCard::setCardVal(int dc){
 int ActionCard::getCardVal(){
     return cardval;
 }
-
-void ActionCard::setIsAttack(bool in){
-    isattack = in;
+int ActionCard::getPrice(){
+    return price;
+}
+void ActionCard::setPrice(int val){
+    price = val;
 }
 
 void ActionCard::setInUse(bool in){

@@ -15,15 +15,6 @@ bool areWidgetsClose(QWidget* widget1, QWidget* widget2, int threshold)
     return rect1.intersects(rect2);
 }
 
-ActionCard* getCard(QWidget* parent, const QString& name){
-    if (name == "bandage") {
-        return new Bandage(parent);
-    } else if (name == "sword") {
-        return new Shield(parent);
-    }
-    return new Sword(parent);
-}
-
 FightScreen::FightScreen(QWidget *parent, QStackedWidget *stackwidg) :
     Screen(parent, stackwidg),
     ui(new Ui::FightScreen)
@@ -233,6 +224,10 @@ void FightScreen::updateEntitiesTextures()
     ui->enemy->setOffset(GameManager::getEnemy()->getOffset());
     ui->enemy->setScale(GameManager::getEnemy()->getSize().width(), GameManager::getEnemy()->getSize().height());
 
+    ui->char_2->setAnimatedTexture(GameManager::getChar()->getTexture());
+    ui->char_2->setOffset(GameManager::getChar()->getOffset());
+    ui->char_2->setScale(GameManager::getChar()->getSize().width(), GameManager::getChar()->getSize().height());
+
     ui->char_name->setText(GameManager::getChar()->getName());
     ui->char_hp->setValue(GameManager::getChar()->getCurrHealth());
     ui->char_hp->setMaximum(GameManager::getChar()->getMaxHealth());
@@ -316,9 +311,6 @@ void FightScreen::startFight()
 
         connect(animation, &QPropertyAnimation::finished, this, [=]() {
             updateEntitiesTextures();
-            if (wasplayer){
-                ui->nextturn->show();
-            }
             timer->start();
         });
         animation->start();
@@ -352,6 +344,9 @@ void FightScreen::startFight()
         animation->setEasingCurve(QEasingCurve::InOutBack);
         connect(animation, &QPropertyAnimation::finished, this, [=]() {
             updateEntitiesTextures();
+            if (wasplayer){
+                ui->nextturn->show();
+            }
         });
         if (caster->getBlindness() > 0){
             dice->setPixmap(QPixmap("://assets/images/dices/diceunknown.png"));

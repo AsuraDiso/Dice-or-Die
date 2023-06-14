@@ -29,6 +29,7 @@ void DeathScreen::on_retrybtn_clicked()
 {
     stackwidget->setCurrentIndex(4);
     GameManager::setOverlayScreen("hide");
+    GameManager::startNewGame();
 }
 
 

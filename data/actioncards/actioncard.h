@@ -17,6 +17,8 @@ public:
     bool isAttack();
     void setCardVal(int dc);
     int getCardVal();
+    int getPrice();
+    void setPrice(int price);
     void setInUse(bool in);
     void setPosition(int x, int y);
     void setScale(int w, int h);
@@ -30,6 +32,7 @@ protected:
     bool inuse;
     bool isattack;
     int cardval;
+    int price;
     TextImage name;
     TextImage diceimg;
     TextImage desc;

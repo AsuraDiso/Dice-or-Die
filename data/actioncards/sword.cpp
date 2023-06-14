@@ -5,6 +5,7 @@ Sword::Sword(QWidget *parent) :
     ActionCard(parent)
 {
     name.setText("Sword");
+    setPrice(2);
 }
 
 void Sword::onUse(Entity *caster, Entity *target){

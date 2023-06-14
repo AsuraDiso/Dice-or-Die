@@ -9,6 +9,8 @@
 #include "mapscreen.h"
 #include "creditsscreen.h"
 #include "settingsscreen.h"
+#include "backpackscreen.h"
+#include "chestscreen.h"
 #include "shopscreen.h"
 #include "levelupscreen.h"
 #include "deathscreen.h"
@@ -27,6 +29,9 @@ Window::Window(QWidget *parent)
     MapScreen* mapscreen = new MapScreen(this, ui->stackedWidget);
     FightScreen* fightscreen = new FightScreen(this, ui->stackedWidget);
     BossFightScreen* bossfightscreen = new BossFightScreen(this);//, ui->stackedWidget
+    ChestScreen* chestscreen = new ChestScreen(this, ui->stackedWidget);
+    ShopScreen* shopscreen = new ShopScreen(this, ui->stackedWidget);
+    BackPackScreen* backpackscreen = new BackPackScreen(this, ui->stackedWidget);
     TutorialScreen* tutorialscreen = new TutorialScreen(this, ui->stackedWidget);
     SettingsScreen* settingsscreen = new SettingsScreen(this, ui->stackedWidget);
     CreditsScreen* creditsscreen = new CreditsScreen(this, ui->stackedWidget);
@@ -38,6 +43,9 @@ Window::Window(QWidget *parent)
     ui->stackedWidget->addWidget(mapscreen);
     ui->stackedWidget->addWidget(fightscreen);
     ui->stackedWidget->addWidget(bossfightscreen);
+    ui->stackedWidget->addWidget(chestscreen);
+    ui->stackedWidget->addWidget(shopscreen);
+    ui->stackedWidget->addWidget(backpackscreen);
     ui->stackedWidget->setCurrentWidget(mainscreen);
     DeathScreen* deathscreen = new DeathScreen(this, ui->stackedWidget);
     //LevelUpScreen* levelupscreen = new LevelUpScreen(this, ui->stackedWidget);
