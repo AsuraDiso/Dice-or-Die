@@ -9,9 +9,19 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    data/actioncards/actioncard.cpp \
+data/actioncards/actioncard.cpp \
     data/actioncards/bandage.cpp \
+    data/actioncards/boomerang.cpp \
+    data/actioncards/bow.cpp \
+    data/actioncards/corruptionbite.cpp \
+    data/actioncards/hardbite.cpp \
+    data/actioncards/magmaattack.cpp \
+    data/actioncards/poisonbite.cpp \
+    data/actioncards/poisonpotion.cpp \
+    data/actioncards/poisonpotiondouble.cpp \
+    data/actioncards/poisonpotionheal.cpp \
     data/actioncards/shield.cpp \
+    data/actioncards/shieldattack.cpp \
     data/actioncards/sword.cpp \
     data/chars/archer.cpp \
     data/chars/character.cpp \
@@ -19,8 +29,14 @@ SOURCES += \
     data/chars/witch.cpp \
     data/components/gamemanager.cpp \
     data/components/mapgenerator.cpp \
+    data/components/dynamiclist.cpp \
     data/components/musicmanager.cpp \
+    data/enemies/bat.cpp \
+    data/enemies/crab.cpp \
     data/enemies/enemy.cpp \
+    data/enemies/fox.cpp \
+    data/enemies/magma.cpp \
+    data/enemies/slime.cpp \
     data/enemies/spider.cpp \
     data/entity.cpp \
     data/screens/backpackscreen.cpp \
@@ -29,6 +45,7 @@ SOURCES += \
     data/screens/chestscreen.cpp \
     data/screens/creditsscreen.cpp \
     data/screens/deathscreen.cpp \
+    data/screens/disclaimerscreen.cpp \
     data/screens/fightscreen.cpp \
     data/screens/gamescreen.cpp \
     data/screens/levelupscreen.cpp \
@@ -54,7 +71,17 @@ SOURCES += \
 HEADERS += \
     data/actioncards/actioncard.h \
     data/actioncards/bandage.h \
+    data/actioncards/boomerang.h \
+    data/actioncards/bow.h \
+    data/actioncards/corruptionbite.h \
+    data/actioncards/hardbite.h \
+    data/actioncards/magmaattack.h \
+    data/actioncards/poisonbite.h \
+    data/actioncards/poisonpotion.h \
+    data/actioncards/poisonpotiondouble.h \
+    data/actioncards/poisonpotionheal.h \
     data/actioncards/shield.h \
+    data/actioncards/shieldattack.h \
     data/actioncards/sword.h \
     data/chars/archer.h \
     data/chars/character.h \
@@ -63,7 +90,13 @@ HEADERS += \
     data/components/gamemanager.h \
     data/components/mapgenerator.h \
     data/components/musicmanager.h \
+    data/components/dynamiclist.h \
+    data/enemies/bat.h \
+    data/enemies/crab.h \
     data/enemies/enemy.h \
+    data/enemies/fox.h \
+    data/enemies/magma.h \
+    data/enemies/slime.h \
     data/enemies/spider.h \
     data/entity.h \
     data/screens/backpackscreen.h \
@@ -72,6 +105,7 @@ HEADERS += \
     data/screens/chestscreen.h \
     data/screens/creditsscreen.h \
     data/screens/deathscreen.h \
+    data/screens/disclaimerscreen.h \
     data/screens/fightscreen.h \
     data/screens/gamescreen.h \
     data/screens/levelupscreen.h \
@@ -100,6 +134,7 @@ FORMS += \
     data/screens/chestscreen.ui \
     data/screens/creditsscreen.ui \
     data/screens/deathscreen.ui \
+    data/screens/disclaimerscreen.ui \
     data/screens/fightscreen.ui \
     data/screens/gamescreen.ui \
     data/screens/levelupscreen.ui \

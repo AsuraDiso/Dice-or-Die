@@ -161,6 +161,24 @@
     <string>NAME</string>
    </property>
   </widget>
+  <widget class="TextImage" name="bosssoonlabel">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>175</y>
+     <width>621</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>17</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>!!!TU MIAŁ BYĆ BOSS, ALE NIE WYSTARCZIŁO NAM CZASU!!!</string>
+   </property>
+  </widget>
  </widget>
  <customwidgets>
   <customwidget>

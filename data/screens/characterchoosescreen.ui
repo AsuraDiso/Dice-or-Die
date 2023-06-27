@@ -36,7 +36,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Locked</string>
+    <string>Archer</string>
    </property>
   </widget>
   <widget class="TextImage" name="charname_3">
@@ -49,7 +49,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Locked</string>
+    <string>Witch</string>
    </property>
   </widget>
   <widget class="Button" name="charicon">

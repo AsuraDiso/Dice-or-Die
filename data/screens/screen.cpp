@@ -65,4 +65,5 @@ void Screen::sizeInit()
 
 Screen::~Screen()
 {
+    delete timer;
 }

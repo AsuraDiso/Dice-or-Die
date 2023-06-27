@@ -5,6 +5,7 @@ Sword::Sword(QWidget *parent) :
     ActionCard(parent)
 {
     name.setText("Sword");
+    desc.setText("<=5");
     setPrice(2);
 }
 
@@ -14,7 +15,7 @@ void Sword::onUse(Entity *caster, Entity *target){
 }
 
 bool Sword::canUse(int val){
-    return true;
+    return val <= 5;
 }
 
 Sword::~Sword()

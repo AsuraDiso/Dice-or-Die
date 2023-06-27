@@ -13,6 +13,7 @@
 #include "chestscreen.h"
 #include "shopscreen.h"
 #include "levelupscreen.h"
+#include "disclaimerscreen.h"
 #include "deathscreen.h"
 #include "tutorialscreen.h"
 #include <QResizeEvent>
@@ -49,10 +50,12 @@ Window::Window(QWidget *parent)
     ui->stackedWidget->setCurrentWidget(mainscreen);
     DeathScreen* deathscreen = new DeathScreen(this, ui->stackedWidget);
     //LevelUpScreen* levelupscreen = new LevelUpScreen(this, ui->stackedWidget);
+    DisclaimerScreen* disclaimerscreen = new DisclaimerScreen(this, ui->stackedWidget);
     ui->overlays->addWidget(deathscreen);
+    ui->overlays->addWidget(disclaimerscreen);
     //ui->overlays->addWidget(levelupscreen);
-    ui->overlays->setCurrentWidget(deathscreen);
-    ui->overlays->parentWidget()->hide();
+    ui->overlays->setCurrentWidget(disclaimerscreen);
+    //ui->overlays->parentWidget()->hide();
     GameManager::setOverlay(ui->overlays);
 }
 

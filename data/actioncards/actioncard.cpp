@@ -17,13 +17,13 @@ ActionCard::ActionCard(QWidget *parent) :
 
     name.setParent(this);
     name.show();
-    name.setText("TEMP");
+    name.setText("Empty");
 
     desc.setParent(this);
     desc.show();
-    desc.setText("descTEMP");
-    name.setGeometry(60 ,20,50,50);
-    desc.setGeometry(60,160,50,50);
+    desc.setText("---======---");
+    name.setGeometry(60 ,20,120,50);
+    desc.setGeometry(60,160,120,50);
     diceimg.setGeometry(60,60,50,50);
 }
 void ActionCard::resize(double width, double height){

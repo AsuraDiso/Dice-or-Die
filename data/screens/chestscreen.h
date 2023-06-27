@@ -28,6 +28,7 @@ private slots:
 private:
     Ui::ChestScreen *ui;
     ActionCard* card;
+    QString cardname;
 };
 
 #endif // CHESTSCREEN_H

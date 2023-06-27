@@ -46,12 +46,22 @@ FightScreen::FightScreen(QWidget *parent, QStackedWidget *stackwidg) :
             }
             Entity* ai = GameManager::getEnemy();
 
+            QList<ActionCard*> cardList = this->findChildren<ActionCard*>();
             for (int i = 0; i < numDices; i++) {
                 Dice* dice = dices[i];
 
-                for (ActionCard* card : this->findChildren<ActionCard*>()) {
+                for (int i = cardList.size()-1; i >= 0; i--) {
+                    ActionCard* card = cardList.at(i);
                     if (not card->inUse() and card->canUse(dice->getDiceVal())) {
                         card->setInUse(true);
+                        if (ai->getCorruption() >= 1 && ai->getCorruption() <= 5) {
+                            if (rand() % 10 < ai->getCorruption()) {
+                                ai->setCorruption(-ai->getCorruption());
+                                delete card;
+                                delete dice;
+                            }
+                            break;
+                        }
                         qDebug() << card->canUse(dice->getDiceVal());
                         QPointF startPos = dice->pos();
                         QPointF endPos = QPointF(card->pos().x() + card->size().width()/3, card->pos().y() + card->size().height()/5);
@@ -77,7 +87,8 @@ FightScreen::FightScreen(QWidget *parent, QStackedWidget *stackwidg) :
                 }
             }
             if (timepassed == 1600){
-                for (ActionCard* card : this->findChildren<ActionCard*>()) {
+                for (int i = cardList.size()-1; i >= 0; i--) {
+                    ActionCard* card = cardList.at(i);
                     QPointF startPos = card->pos();
                     QPointF endPos = QPointF(card->pos().x(), card->pos().y()-card->size().height()*1.5);
                     if (card->getCardVal() > 0){
@@ -113,7 +124,8 @@ FightScreen::FightScreen(QWidget *parent, QStackedWidget *stackwidg) :
                 }
             }
             if (timepassed == 2200){
-                for (ActionCard* card : this->findChildren<ActionCard*>()) {
+                for (int i = cardList.size()-1; i >= 0; i--) {
+                    ActionCard* card = cardList.at(i);
                     if (card->getCardVal() > 0){
                         card->onUse(ai, GameManager::getChar());
                         if (ai->getRage() > 0) {
@@ -126,6 +138,7 @@ FightScreen::FightScreen(QWidget *parent, QStackedWidget *stackwidg) :
                 if (GameManager::getChar()->getCurrHealth() <= 0){
                     stopFight();
                     GameManager::setOverlayScreen("death");
+                    timepassed = 0;
                     return;
                 }
             }
@@ -141,46 +154,47 @@ FightScreen::FightScreen(QWidget *parent, QStackedWidget *stackwidg) :
                         Entity* caster = GameManager::getChar();
                         Entity* target = GameManager::getEnemy();
 
-                        if (caster->getCorruption() >= 1 && caster->getCorruption() <= 5) {
-                            if (rand() % 10 < caster->getCorruption()) {
-                                caster->setCorruption(-rand() % 3 + 1);
+                        timepassed = 0;
+                        if (caster->getCorruption() >= 1) {
+                            if ( rand() % 10 < caster->getCorruption()) {
+                                caster->setCorruption(-caster->getCorruption());
                                 delete card;
-                            }
-                        } else {
-                            timepassed = 0;
-                            card->setCardVal(dice->getDiceVal());
-                            delete dice;
-                            QPointF startPos = card->pos();
-                            QPointF endPos = QPointF(card->pos().x(), card->pos().y()-card->size().height()*1.5);
-                            QPropertyAnimation* animation = new QPropertyAnimation(card, "pos");
-                            animation->setDuration(1200);
-                            animation->setStartValue(startPos);
-                            animation->setEndValue(endPos);
-                            animation->setEasingCurve(QEasingCurve::InOutBack);
-                            ui->nextturn->hide();
-                            QTimer::singleShot(800, [=]() {
-                                card->onUse(caster, target);
-                                if (caster->getRage() > 0) {
-                                    card->setCardVal(dice->getDiceVal());
-                                    card->onUse(caster, target);
-                                    caster->setRage(-1);
-                                }
-                                if (dice->isBurn()) {
-                                    caster->deltaHealth(-2, target);
-                                }
-                                if (GameManager::getEnemy()->getCurrHealth() <= 0){
-                                    stopFight();
-                                    //GameManager::setOverlayScreen("nextlvl");
-                                }
-                            });
-                            connect(animation, &QPropertyAnimation::finished, this, [=]() {
-                                updateEntitiesTextures();
-                                ui->nextturn->show();
-                                delete card;
-                            });
-
-                            animation->start();
+                                delete dice;
+                                return;
+                           }
                         }
+                        card->setCardVal(dice->getDiceVal());
+                        delete dice;
+                        QPointF startPos = card->pos();
+                        QPointF endPos = QPointF(card->pos().x(), card->pos().y()-card->size().height()*1.5);
+                        QPropertyAnimation* animation = new QPropertyAnimation(card, "pos");
+                        animation->setDuration(1200);
+                        animation->setStartValue(startPos);
+                        animation->setEndValue(endPos);
+                        animation->setEasingCurve(QEasingCurve::InOutBack);
+                        ui->nextturn->hide();
+                        QTimer::singleShot(800, [=]() {
+                            card->onUse(caster, target);
+                            if (caster->getRage() > 0) {
+                                card->setCardVal(dice->getDiceVal());
+                                card->onUse(caster, target);
+                                caster->setRage(-1);
+                            }
+                            if (dice->isBurn()) {
+                                caster->deltaHealth(-2, target);
+                            }
+                            if (GameManager::getEnemy()->getCurrHealth() <= 0){
+                                stopFight();
+                                //GameManager::setOverlayScreen("nextlvl");
+                            }
+                        });
+                        connect(animation, &QPropertyAnimation::finished, this, [=]() {
+                            updateEntitiesTextures();
+                            ui->nextturn->show();
+                            delete card;
+                        });
+
+                        animation->start();
                     }
                 }
             }

@@ -25,7 +25,7 @@ void ChestScreen::sizeInit(){
 void ChestScreen::spawnCard(){
     ui->take->hide();
     ui->throw_2->hide();
-    card = GameManager::getRandomCard(this);
+    card = GameManager::getRandomCard(this, &cardname);
     card->setGeometry(315, 100, 170, 300);
     card->resize(width(), height());
     card->show();
@@ -72,6 +72,7 @@ void ChestScreen::on_take_clicked()
     animation->setEasingCurve(QEasingCurve::InBack);
 
     connect(animation, &QPropertyAnimation::finished, this, [=]() {
+        GameManager::GetBackPack()->insert(cardname);
         stackwidget->setCurrentIndex(5);
         delete card;
     });

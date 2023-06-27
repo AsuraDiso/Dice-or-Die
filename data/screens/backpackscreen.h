@@ -18,7 +18,7 @@ public:
     explicit BackPackScreen(QWidget *parent = nullptr, QStackedWidget *stacked = nullptr);
     void resizeScreen(QResizeEvent *event) override;
     void sizeInit();
-    void onListButtonClick(QString name);
+    void onListButtonClick(QString name, int ind);
     ~BackPackScreen();
 
 private slots:
@@ -26,6 +26,10 @@ private slots:
 
 private:
     Ui::BackPackScreen *ui;
+    Button *btn;
+    ActionCard *card;
+    QString cardname;
+    int cardind;
 };
 
 #endif // BACKPACKSCREEN_H

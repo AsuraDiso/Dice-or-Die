@@ -4,6 +4,11 @@
 #include "../chars/archer.h"
 #include "../chars/witch.h"
 #include "../enemies/spider.h"
+#include "../enemies/bat.h"
+#include "../enemies/crab.h"
+#include "../enemies/fox.h"
+#include "../enemies/magma.h"
+#include "../enemies/slime.h"
 #include "../screens/fightscreen.h"
 #include "../screens/chestscreen.h"
 #include "../screens/shopscreen.h"
@@ -21,9 +26,10 @@ Character *GameManager::character = nullptr;
 Enemy *GameManager::enemy = nullptr;
 QStackedWidget *GameManager::overlay = nullptr;
 QString GameManager::shopitems[3] = { "", "", "" };
+DynamicList *GameManager::backpack = new DynamicList;
 
-QStringList cards = { "bandage", "sword", "shield" };
-QStringList enemies = { "spider" };
+QStringList cards = { "bandage", "sword", "shield", "magmaattack", "poisonbite", "hardbite", "corruptionbite", "shieldattack", "bow", "boomerang", "poisonpotion", "poisonpotiondouble" , "poisonpotionheal" };
+QStringList enemies = { "spider", "bat", "crab", "fox", "magma", "slime"};
 
 GameManager::GameManager()
 {
@@ -44,16 +50,32 @@ MapGenerator GameManager::getMap()
 }
 
 ActionCard* GameManager::getCard(QWidget* parent, const QString& name){
-    if (name == "bandage") { return new Bandage(parent);}
-    else if (name == "shield") {return new Shield(parent);}
+    if (name == "bandage")  return new Bandage(parent);
+    if (name == "shield") return new Shield(parent);
+    if (name == "magmaattack") return new MagmaAttack(parent);
+    if (name == "poisonbite") return new PoisonBite(parent);
+    if (name == "hardbite") return new HardBite(parent);
+    if (name == "corruptionbite") return new CorruptionBite(parent);
+    if (name == "shieldattack") return new ShieldAttack(parent);
+    if (name == "bow") return new Bow(parent);
+    if (name == "boomerang") return new Boomerang(parent);
+    if (name == "poisonpotion") return new PoisonPotion(parent);
+    if (name == "poisonpotiondouble") return new PoisonPotionDouble(parent);
+    if (name == "poisonpotionheal") return new PoisonPotionHeal(parent);
     return new Sword(parent);
 }
 
-ActionCard* GameManager::getRandomCard(QWidget* parent){
-    return getCard(parent, cards[rand()%cards.size()]);
+ActionCard* GameManager::getRandomCard(QWidget* parent, QString *name){
+    *name = cards[rand()%cards.size()];
+    return getCard(parent, *name);
 }
 
 Enemy* createEnemy(QString name){
+    if (name == "slime") return new Slime();
+    if (name == "bat") return new Bat();
+    if (name == "crab") return new Crab();
+    if (name == "magma") return new Magma();
+    if (name == "fox") return new Fox();
     return new Spider();
 }
 
@@ -79,6 +101,7 @@ QString* GameManager::getShopItems(){
 void GameManager::startNewGame(){
     leveldepth = "1";
     coins = 0;
+    //backpack->clear();
     GameManager::getMap().clearMap();
     generateNewLevel();
 }
@@ -202,6 +225,10 @@ void GameManager::doAttack(){
     }
     */
 
+}
+
+DynamicList *GameManager::GetBackPack(){
+    return backpack;
 }
 
 GameManager::~GameManager()

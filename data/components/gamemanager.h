@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include "mapgenerator.h"
+#include "dynamiclist.h"
 #include "../chars/character.h"
 #include "../enemies/enemy.h"
 #include "../actioncards/actioncard.h"
@@ -14,6 +15,16 @@
 #include "../actioncards/bandage.h"
 #include "../actioncards/sword.h"
 #include "../actioncards/shield.h"
+#include "../actioncards/magmaattack.h"
+#include "../actioncards/poisonbite.h"
+#include "../actioncards/corruptionbite.h"
+#include "../actioncards/shieldattack.h"
+#include "../actioncards/hardbite.h"
+#include "../actioncards/bow.h"
+#include "../actioncards/boomerang.h"
+#include "../actioncards/poisonpotion.h"
+#include "../actioncards/poisonpotiondouble.h"
+#include "../actioncards/poisonpotionheal.h"
 
 class GameManager
 {
@@ -32,7 +43,7 @@ public:
     static void doAttack();
     static void EntitiesUpdate();
     static void startNewGame();
-    static ActionCard* getRandomCard(QWidget* parent);
+    static ActionCard* getRandomCard(QWidget* parent, QString *name);
     static MapGenerator getMap();
     static ActionCard* getCard(QWidget* parent, const QString& name);
     static QString getLevelDepth();
@@ -50,6 +61,7 @@ public:
     static int generateDice(bool isenemy);
     static void setOverlay(QStackedWidget *overlay);
     static void setOverlayScreen(QString page);
+    static DynamicList *GetBackPack();
 
 private:
     static GameManager *instance;
@@ -62,6 +74,7 @@ private:
     static int bosslevel;
     static QStackedWidget *overlay;
     static QString shopitems[3];
+    static DynamicList *backpack;
 };
 
 #endif // GAMEMANGER_H

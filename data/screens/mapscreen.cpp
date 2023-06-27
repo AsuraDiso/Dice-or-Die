@@ -9,13 +9,13 @@ MapScreen::MapScreen(QWidget *parent, QStackedWidget *stackwidg) :
     ui->setupUi(this);
     ui->nextlevel_xp->setStaticColor("yellow");
     ui->playericon->setScaledContents(true);
+    ui->bosssoonlabel->hide();
 }
 
 void MapScreen::resizeScreen(QResizeEvent *event)
 {
     QWidget::resizeEvent(event);
     Screen::updateScale(event);
-
 }
 
 void MapScreen::sizeInit() {
@@ -43,6 +43,7 @@ void MapScreen::sizeInit() {
 
     int val = 0;
     if (GameManager::getLevelDepth().toInt() >= GameManager::getBossLevel()) {
+        ui->bosssoonlabel->show();
         return;
     }
 
@@ -103,7 +104,7 @@ void MapScreen::sizeInit() {
 
 void MapScreen::on_backpackbtn_clicked()
 {
-    stackwidget->setCurrentIndex(9);
+    stackwidget->setCurrentIndex(10);
 }
 
 MapScreen::~MapScreen()
